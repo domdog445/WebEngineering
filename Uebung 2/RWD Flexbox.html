@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+	<title> Flexbox</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	
+	* {
+	  box-sizing: border-box;
+	}
+	#dummy {}
+	/*Allgemein*/
+	
+	#red {background-color: #FF2500; 
+			 }
+	#green 	{background-color: #2CEE27;
+			 }
+	#blue 	{background-color: #0533FF;
+			 }
+	#pink 	{background-color: #EA3EFE;
+			 }
+	body 	{display: flex;
+			flex-wrap: wrap}
+			
+	html, body
+	{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	}
+	
+	.boxx {margin: 5px 5px 5px 5px;}
+	/*Desktop*/
+	
+	
+	#red {  background-color: #FF2500; 
+			flex: 100%;
+		    height: 19%;}
+	#green {
+			flex: 9%;
+			height: 80%;}
+	#blue { flex: 75%;
+			height: 80%;}
+	#pink { flex: 9%;
+			height: 80%;}
+	
+	/*Tablet*/
+	@media (max-width: 800px) {
+
+		#red {flex: 100%;
+		    height: 19%;}
+		#green {
+				flex: 30%;
+				height: 58%;}
+		#blue { flex: 64%;
+				height: 58%;}
+		#pink { flex: 100%;
+				height: 19%;}
+	}-->
+	
+	/*Phone*/
+	@media (max-width: 600px) {
+
+		#red {  flex: 100%;
+		    height: 20%;}
+		#green {
+				flex: 100%;
+				height: 20%;}
+		#blue { flex: 100%;
+				height: 200%;}
+		#pink { flex: 100%;
+				height: 20%;}
+		.boxx {margin: 0px 0px 0px 0px;}
+	}
+	
+	
+	
+	</style>
+	
+</head>
+
+<body>
+	<div id="red" class="boxx"> </div>
+	<div id="green" class="boxx"> </div>
+	<div id="blue" class="boxx"> </div>
+	<div id="pink" class="boxx"> </div>
+</body>
+
+
+</html>
+
