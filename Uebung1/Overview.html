@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+	<title> Domenic Overview 1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	<style>
+		table{border: 2px solid black;}
+		td{border: 2px solid black;}
+		body{background-color: #999999;}
+		dt{background-color: #FFFFFF;
+			margin: 20px 20px 0px 20px;}
+		dd{background-color: #DDDDDD;
+			margin: 0px 20px 0px 20px;
+			padding: 10px 10px 10px 10px}
+		dd:last-child{margin: 0px 20px 20px 20px;}	
+			
+		p{margin: 0px 25px 0px 15px;
+			padding: 5px 0px 15px 0px;}
+		h2{margin: 0px 0px 0px 0px;}
+		h1{
+			margin: 0px 0px 0px 0px;}
+		
+		.outlinebox{border: 5px solid black;
+					margin: 5px 5px 5px 5px}
+
+	</style>
+	
+</head>
+
+<body>
+	<dl>
+		<!-- Nummer 1 -->
+		<div class="outlinebox">
+		<dt>
+			<h1>1.1. Fachliche Argumentation über Erfolgsprinzipien des WWW <h1>
+			
+		</dt>
+		<dd> <h2>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</h2>
+			 <p>
+				Das WWW vermittelte für außenstende keine gute Evolvierbarkeit (Welche allerdings da war).
+				Desweiteren, hat das Programmkomitee der weltgrößten Hypertext Konferenz, das Konzepft von 
+				Tim Berners Lee als Rückschritt des derzeitige Forschungsstands anerkannt wurde. 
+				Unteranderem weil Broken Links möglich waren, welches andere Konzepte vermieden. 
+			</p>
+		</dd>
+		<dd> <h2>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</h2>
+			 <p>
+				Die Skalierbarkeit sowie die Evolvierbarkeit. 
+				Desweiteren hat es keine Zentrale Kontrolle und ist offen für jeden, 
+				weshalb jeder schnell eine neue Webseite erstellen kann.
+				Zudem wurden weitere Dimensionen hinzugefügt
+			</p>
+		</dd>
+		<dd> <h2>Was wäre der Preis für die garantierte Verhinderung von “broken links”?</h2>
+			 <p>
+				Zentrale Kontrolle <br>
+				Geschlossenheit
+			</p>
+		</dd>
+		</div>
+		<!-- Nummer 2 -->	
+		<div class="outlinebox">
+		<dt>
+			<h1>1.2. HTTP  <h1>
+		</dt>
+		<dd>
+			<table>
+				<tr> 
+					<td> HTTP-Code</td>
+					<td> Beschreibung</td>
+				</tr>
+				<tr> 
+					<td> 200</td>
+					<td> bedeutet das die Anfrage erfolgreich durchgeführt wurde<br>
+						 Alle 2xx Codes bedeuten, das die Anfrage erfolgreich durchgeführt wurde</td>
+				</tr>
+				<tr> 
+					<td> 301</td>
+					<td> gibt an, das die angeforderte Ressource nicht mehr under dieser Adresse, 
+						sondern unter einer anderen Adresse erreichbar ist. Dabei wird die neue URL 
+						ebenfalls mitgeteilt. <br>
+						Alle 3xx Codes, deuten auf Weiterleitungen hin.</td>
+				</tr>
+				<tr> 
+					<td> 400</td>
+					<td> Die gesendete Anfrage war Fehlerhaft. 
+						 Was genau, ist anhand des Fehler nicht zu beantworten. <br>
+						 Alle 4xx Codes, deuten auf Fehler hin.
+					</td>
+				</tr>
+				<tr> 
+					<td> 403</td>
+					<td> Der Client hat keine Berechtigung auf die Ressource zuzugreifen.<br>
+						 Falls sie die nötigen Berechtigungen eigentlich besitzen, 
+						 kann ein neuladen der Seite und ein löschen des Caches das Problem beheben. 
+						 Ansonsten muss der Benutzer sich an einen Adminisrator wenden und die 
+						 Berechtigungen erbitten.</td>
+				</tr>
+			</table>
+		</dd>
+		<dd>
+		<h2>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?  </h2>
+		<P>Mithilfe einer Get-Anfrage, kann eine Options-Anfrage durchgeführt werden.</P>
+		</dd>
+		</div>
+		
+		<!-- Nummer 3 -->	
+		<div class="outlinebox">
+		<dt> 
+			<h1> Bauen sie diese HTTP Wireframe nach <h2>
+			<img src="https://kaul.inf.h-brs.de/wem/assets/img/tribute.png" width=25% height=25%/>
+		</dt>
+		<dd>
+			<h2>Die Lösungen zu Übung 1.3 finden sich <a href="1.3.html">hier</a> </h2>
+		</dd>
+		<!-- Nummer 4 -->	
+		</div>
+		<div class="outlinebox">
+		<dt> 
+			<h1> Bauen sie diese HTTP Wireframe nach <h2>
+			<img src="https://kaul.inf.h-brs.de/wem/assets/img/survey.png" width=25% height=25%/>
+		</dt>
+		<dd>
+			<h2>Die Lösungen zu Übung 1.4 finden sich <a href="1.4.html">hier</a> </h2>
+		</dd>
+		</div>
+		<!-- Nummer 5 -->	
+		<div class="outlinebox">
+		<dt> 
+			<h1> Bauen sie diese HTTP Wireframe nach <h2>
+			<img src="https://kaul.inf.h-brs.de/wem/assets/img/landing.png" width=25% height=25%/>
+			
+		</dt>
+		<dd>
+			<h2>Die Lösungen zu Übung 1.5 finden sich <a href="1.5.html">hier</a> </h2>
+		</dd>
+	</dl>
+</body>
+
+
+</html>
+

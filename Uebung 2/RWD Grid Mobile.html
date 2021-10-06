@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+	<title> Grid</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	
+	* {
+	  box-sizing: border-box;
+	}
+	/*Allgemein*/
+	
+	#red {background-color: #FF2500;
+			grid-area: red; 	
+			 }
+	#green 	{background-color: #2CEE27;
+			grid-area: green; 
+			 }
+	#blue 	{background-color: #0533FF;
+			grid-area: blue; 
+			 }
+	#pink 	{background-color: #EA3EFE;
+			grid-area: pink; 
+			 }
+			 
+	body 	{display: grid;
+				grid-template-areas:
+				'red'
+				'green'
+				'blue'
+				'pink';
+				grid-gap: 0px;
+				 padding: 0px;
+			}
+	html, body
+	{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.boxx {margin: 0px 0px 0px 0px;}
+	
+	
+	#red {  height: 100%;}
+	#green{ height: 100%;}
+	#blue {	height: 100%;}
+	#pink { height: 100%;}
+	
+	
+	@media (min-width: 600px) {
+		body 	{display: grid;
+				grid-template-areas:
+				'red red'
+				'green blue'
+				'green blue'
+				'pink pink';
+				grid-gap: 10px;
+				 padding: 10px;
+		}
+	}
+	
+		@media (min-width: 800px) {
+		body 	{display: grid;
+				grid-template-areas:
+				'red red red red red'
+				'green blue blue blue pink'
+				'green blue blue blue pink'
+				'green blue blue blue pink';
+				grid-gap: 10px;
+				 padding: 10px;
+		}
+	}
+	
+	</style>
+	
+</head>
+
+<body>
+	<div id="red" class="boxx"> </div>
+	<div id="green" class="boxx"> </div>
+	<div id="blue" class="boxx"> </div>
+	<div id="pink" class="boxx"> </div>
+</body>
+
+
+</html>
+
