@@ -1,0 +1,777 @@
+<html lang="de">
+<head>
+    <link rel="icon" href="../Ressource/favicon.svg" sizes="any" type="image/svg+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> JavaScript</title>
+	<style>
+	#console {
+		background-color: #000000;
+		color: #00FF00;
+		width:100%;
+		
+	}
+	
+	pre {
+		background-color: #DDDDDD;
+		padding: 10px 10px 10px 20px
+	}
+	
+	.flexContainer{
+		display: flex;
+		height: 100%;
+		
+	}
+	.ConsoleContainer{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	}
+	
+	.AufgabenContainer{
+	overflow-y: scroll;
+	}
+	
+	</style>
+	
+</head>
+
+<script>
+//Webseiten Funktionen
+function simple_display_function(x)
+{
+	document.getElementById("Console").innerHTML += x +"<br>";
+}
+function function_call_bin_display_function(f,x,y)
+{
+	try
+	{
+		document.getElementById("Console").innerHTML += f(x,y) +"<br>";
+	}
+	catch (e)
+	{
+		simple_display_function(e);
+	}
+}
+function function_call_uni_display_function(f,x)
+{
+	try
+	{
+		document.getElementById("Console").innerHTML += f(x) +"<br>";
+	}
+	catch (e)
+	{
+		simple_display_function(e);
+	}
+}
+
+
+function uni_display_function(f,x)
+{
+	document.getElementById("Console").innerHTML += f(x) +"<br>";
+}
+function uni_uni_display_function(f,x,y)
+{
+	document.getElementById("Console").innerHTML += f(x)(y) +"<br>";
+}
+function bin_display_function(f,x,y)
+{
+	document.getElementById("Console").innerHTML += f(x,y) +"<br>";
+}
+function clearConsole()
+{
+	document.getElementById("Console").innerHTML ="";
+}
+
+
+
+//Get Inputs
+function getInput1()
+{
+	return document.querySelector('#Input1').value;
+}
+function getInput1int()
+{
+	return parseInt(getInput1() ? getInput1() : 0);
+}
+function getInput2()
+{
+	return document.querySelector('#Input2').value;
+}
+function getInput2int()
+{
+	return parseInt(getInput2() ? getInput2() : 0);
+}
+
+function getInput3()
+{
+	return document.querySelector('#Input3').value;
+}
+function getInput3int()
+{
+	return parseInt(getInput3() ? getInput3() : 0);
+}
+
+//Standart Funktionen
+function add(x,y)
+{
+  return x + y;
+}
+function mul(x,y)
+{
+  return x * y;
+}
+
+//Funktionen der Aufgabe 1 
+function identity_function(par)
+{
+  return function()
+  {
+	return par;
+  }
+}
+	
+////////////////////////////
+function addf(x)
+{
+  return function(y){
+	return x+ y;
+  }
+}
+	
+////////////////////////////
+function applyf(op)
+{
+	  return function(x)
+	  {
+	  return function (y)
+	  {
+		return op(x,y);
+	  }
+	  }
+}
+
+////////////////////////////
+
+function curry(f,x)
+{
+  return function(y)
+  {
+    return f(x,y);
+  }
+
+}
+
+const inc1 = addf(1);
+const inc2 = applyf(add)(1)
+const inc3 = curry(add,1)
+
+////////////////////////////
+
+function methodize(f)
+{
+  return function(y)
+  {
+	  return f(this,y);
+  }
+}
+
+Number.prototype.add = methodize(add);
+Number.prototype.mul = methodize(mul);
+
+////////////////////////////
+
+function demethodize(f)
+{
+  return function(x,y)
+  {
+	  return f.call(x,y);
+  }
+}
+
+////////////////////////////
+function twice(f)
+{
+  return function(x)
+	{
+	  return f(x,x);
+	}
+}
+
+var double = twice(add);
+var square = twice(mul);
+
+////////////////////////////
+
+function composeu(f1,f2)
+{
+  return function f(x)
+  {
+	return f2(f1(x));
+  }
+}
+
+////////////////////////////
+
+function composeb(f1,f2)
+{
+  return function (x,y,z)
+  {
+    return f2(f1(x,y),z);
+  }
+
+}
+
+////////////////////////////
+
+function once(f)
+{
+  var count = 0;
+  return function(x,y)
+  {
+	if(count ===0)
+	{
+	  count ++;
+	  return f(x,y);
+	}
+	else
+	{
+	  throw "Fehler Mehrfachnutzung";
+	}
+  }
+}
+add_once = once(add);
+mul_once = once(mul);
+
+
+////////////////////////////
+
+
+function counterf(start)
+{
+  
+  var count = start;
+  return {
+	  inc: function()
+	  {
+		count++;
+		return count;
+	  },
+	  dec: function()
+	  {
+		count--;
+		return count;
+	  }
+  }
+}
+	
+counter = counterf(10);
+
+////////////////////////////
+
+function revocable(_f)
+{
+  var f=_f
+  return{
+	invoke: function(x){
+	  if(f==null)
+		throw "function is revoked";
+	  return f(x);
+	},
+	revoke: function()
+	{
+	  f=null;
+	}
+  }
+}
+
+temp = revocable(alert);
+
+////////////////////////////
+function vector()
+{
+  var elements = [];
+  return {
+		
+	get: function(i)
+	{
+	  return elements[i];
+	},
+	store: function(i,x)
+	{
+	  elements[i] = x;
+	},
+	append: function(x)
+	{
+	  elements.push(x);
+	}
+  }
+}
+
+my_vector = vector();
+my_vector.append(7);
+my_vector.store(1, 8);
+	
+</script>
+
+<body>
+<div class="flexContainer">
+<div class="AufgabenContainer">
+	<div class="Erklaerung" id="e">
+	<h3>Auf dieser Seite sind dir bearbeiteten JavaScript Aufgaben präsentiert. <br>
+		Dabei sind die Lösungen möglichst interaktiv aufbereitet und können per Buttondruck ausgeführt werden.
+		Die dabei entstehende Ausgabe erscheint rechts im Console div<br>
+		Die Inputs 1, 2 und 3 befinden sich ebenfalls rechts und können beliebig gefüllt werden.
+		Wird kein Wert eingetragen, wird der Wert 0 angenommen<br>
+		<br>
+		Der folgende Code, ist für mehrere Aufgaben wichtig, aber wurde nicht direkt gefragt. Deshalb wird er einmal hier aufgeführt
+		</h3>
+		
+	<pre>
+			<code class="language-javascript">
+	function add(x,y)
+	{
+	  return x + y;
+	}
+	function mul(x,y)
+	{
+	  return x * y;
+	}
+			</code>
+		</pre>
+
+	</div>
+<!-- Aufgabe 1-->
+	<div class="Aufgabe" id="a1_1">
+		<h3>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.</h3>
+		<pre>
+			<code class="language-javascript">
+	function identity_function(par)
+	{
+	  return function()
+	  {
+		return par;
+	  }
+	}
+
+			</code>
+		</pre>
+
+		<button onclick="simple_display_function(identity_function(5)())"> identity_function(5)()</button>
+		<button onclick="simple_display_function(identity_function(42)())"> identity_function(42)()</button>
+		<button onclick="simple_display_function(identity_function('hallo')())"> identity_function("hallo")()</button>
+		<button onclick="simple_display_function(identity_function(getInput3())())"> identity_function(Input3)()</button>
+	</div>
+	<div class="Aufgabe" id="a1_2">
+		<h3>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. 
+		    (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, 
+			die auf y angewandt wird.)</h3>
+		<pre>
+			<code class="language-javascript">
+	function addf(x)
+	{
+	  return function(y){
+		return x+ y;
+	  }
+	}
+
+			</code>
+		</pre>
+
+		<button onclick="uni_uni_display_function(addf,5,4)"> addf(5)(4)</button>
+		<button onclick="uni_uni_display_function(addf,10,2)"> addf(10)(2)</button>
+		<button onclick="uni_uni_display_function(addf,67,-25)"> addf(67)(-25)</button>
+		<button onclick="uni_uni_display_function(addf,getInput1int(),getInput2int())"> addf(Input1)(Input2)</button>
+	</div>
+	<div class="Aufgabe" id="a1_3">
+		<h3>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) 
+		eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, 
+		z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend 
+		applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function applyf(op)
+	{
+	   return function(x)
+	   {
+		  return function (y)
+		  {
+			return op(x,y);
+		  }
+
+	   }
+	}
+
+			</code>
+		</pre>
+
+		<button onclick="uni_uni_display_function(applyf(mul),5,6)"> applyf(mul)(5)(6)</button>
+		<button onclick="uni_uni_display_function(applyf(add),12,21)"> applyf(add)(12)(21)</button>
+		<button onclick="uni_uni_display_function(applyf(mul),getInput1int(),getInput2int())"> applyf(mul)(Input1)(Input2)</button>
+		<button onclick="uni_uni_display_function(applyf(add),getInput1int(),getInput2int())"> applyf(add)(Input1)(Input2)</button>
+	</div>
+	<div class="Aufgabe" id="a1_4">
+		<h3>Schreiben Sie eine Funktion curry() (von Currying), 
+		die eine binäre Funktion und ein Argument nimmt, 
+		um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, 
+		z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function curry(f,x)
+	{
+	  return function(y)
+	  {
+		return f(x,y);
+	  }
+
+	}
+
+			</code>
+		</pre>
+
+		<button onclick="uni_display_function(curry(mul,5),6)"> curry(mul,5)(6)</button>
+		<button onclick="uni_display_function(curry(add,12),21)"> curry(add,12)(21)</button>
+		<button onclick="uni_display_function(curry(mul,getInput1int()),getInput2int())"> curry(mul,Input1)(Input2)</button>
+		<button onclick="uni_display_function(curry(add,getInput1int()),getInput2int())"> curry(add,Input1)(Input2)</button>
+	</div>
+	<div class="Aufgabe" id="a1_5">
+		<h3>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben,
+		ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch 
+		direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten 
+		der inc()-Implementierung zu schreiben?</h3>
+		<pre>
+			<code class="language-javascript">
+
+	const inc1 = addf(1);
+	const inc2 = applyf(add)(1)
+	const inc3 = curry(add,1)
+
+			</code>
+		</pre>
+
+		<button onclick="uni_display_function(inc1,6)"> inc1(6)</button>		
+		<button onclick="uni_display_function(inc1,getInput1int())"> inc1(Input1)</button>
+		
+		<button onclick="uni_display_function(inc2,12)"> inc2(12)</button>
+		<button onclick="uni_display_function(inc2,getInput1int())"> inc2(Input1)</button>
+		
+		<button onclick="uni_display_function(inc3,41)"> inc3(41)</button>
+		<button onclick="uni_display_function(inc3,getInput1int())"> inc3(Input1)</button>
+	</div>
+	<div class="Aufgabe" id="a1_6">
+		<h3>Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine 
+		unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function methodize(f)
+	{
+	  return function(y)
+	  {
+		  return f(this,y);
+	  }
+	}
+	Number.prototype.add = methodize(add);
+	Number.prototype.mul = methodize(mul);
+			</code>
+		</pre>
+
+		<button onclick="simple_display_function((3).add(4))"> (3).add(4)</button>		
+		<button onclick="simple_display_function((getInput1int()).add(getInput2int()))"> (Input1).add(Input2)</button>
+		
+		<button onclick="simple_display_function((3).mul(4))"> (3).mul(4)</button>		
+		<button onclick="simple_display_function((getInput1int()).mul(getInput2int()))"> (Input1).mul(Input2)</button>
+	</div>
+	<div class="Aufgabe" id="a1_7">
+		<h3>Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre 
+		Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function demethodize(f)
+	{
+	  return function(x,y)
+	  {
+		  return f.call(x,y);
+	  }
+	}
+			</code>
+		</pre>
+
+		<button onclick="simple_display_function(demethodize(Number.prototype.add)(5, 6))"> demethodize(Number.prototype.add)(5, 6)</button>		
+		<button onclick="simple_display_function(demethodize(Number.prototype.add)(getInput1int(), getInput2int()))"> demethodize(Number.prototype.add)(Input1, Input2)</button>
+		
+		<button onclick="simple_display_function(demethodize(Number.prototype.mul)(5, 6))"> demethodize(Number.prototype.mul)(5, 6)</button>		
+		<button onclick="simple_display_function(demethodize(Number.prototype.mul)(getInput1int(), getInput2int()))"> demethodize(Number.prototype.mul)(Input1, Input2)</button>
+		
+	</div>
+	<div class="Aufgabe" id="a1_8">
+		<h3>Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion 
+		umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); 
+		double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function twice(f)
+	{
+	  return function(x)
+		{
+		  return f(x,x);
+		}
+	}
+
+	var double = twice(add);
+	var square = twice(mul);
+	</code>
+		</pre>
+
+		<button onclick="simple_display_function(double(5))"> double(5)</button>		
+		<button onclick="simple_display_function(double(getInput1int()))"> double(Input1)</button>
+		
+		<button onclick="simple_display_function(square(5))"> twice(5)</button>		
+		<button onclick="simple_display_function(square(getInput1int()))"> twice(Input1)</button>
+	</div>
+	<div class="Aufgabe" id="a1_9">
+		<h3>Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne 
+		unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll 
+		composeu(double, square)(3) genau 36 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function composeu(f1,f2)
+	{
+	  return function f(x)
+	  {
+		return f2(f1(x));
+	  }
+	}
+	</code>
+		</pre>
+
+		<button onclick="simple_display_function(composeu(double, square)(3))"> composeu(double, square)(3) </button>		
+		<button onclick="simple_display_function(composeu(double, square)(getInput1int()))"> composeu(double, square)(Input1)</button>
+		
+		<button onclick="simple_display_function(composeu(square, double)(3))"> composeu(square, double )(3) </button>		
+		<button onclick="simple_display_function(composeu(square, double)(getInput1int()))"> composeu(square, double)(Input1)</button>
+		
+	</div>
+	<div class="Aufgabe" id="a1_10">
+		<h3>Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, 
+		die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+
+	function composeb(f1,f2)
+	{
+	  return function (x,y,z)
+	  {
+		return f2(f1(x,y),z);
+	  }
+
+	}
+	</code>
+		</pre>
+
+		<button onclick="simple_display_function(composeb(add, mul)(2, 3, 5))"> composeb(add, mul)(2, 3, 5) </button>		
+		<button onclick="simple_display_function(composeb(add, mul)(getInput1int(),getInput2int(),getInput3int()))"> composeb(add, mul)(Input1, Input2, Input3)</button>
+
+		<button onclick="simple_display_function(composeb(mul, add)(2, 3, 5))"> composeb(mul, add)(2, 3, 5) </button>		
+		<button onclick="simple_display_function(composeb(mul, add)(getInput1int(),getInput2int(),getInput3int()))"> composeb(mul, add)(Input1, Input2, Input3)</button>
+
+		
+	</div>
+	<div class="Aufgabe" id="a1_11">
+		<h3>Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, 
+		aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, 
+		beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.</h3>
+		<pre>
+			<code class="language-javascript">
+	function once(f)
+	{
+	  var count = 0;
+	  return function(x,y)
+	  {
+		if(count ===0)
+		{
+		  count ++;
+		  return f(x,y);
+		}
+		else
+		{
+		  throw "Fehler Mehrfachnutzung";
+		}
+	  }
+	}
+	
+	add_once = once(add);
+	mul_once = once(add);
+	//add_once & mul_once sind bereits einmal gesetzt
+	
+	</code>
+		</pre>
+
+		<button onclick="add_once = once(add); simple_display_function('add_once reseted')"> add_once = once(add);  </button>		
+		<button onclick="mul_once = once(add); simple_display_function('mul_once reseted')"> mul_once = once(mul);  </button>		
+		
+		<button onclick="function_call_bin_display_function(add_once,3, 4)"> add_once(3, 4)</button>
+		<button onclick="function_call_bin_display_function(add_once,getInput1int(), getInput2int())"> add_once(Input1, Input2)</button>
+		
+		<button onclick="function_call_bin_display_function(mul_once,3, 4)"> mul_once(3, 4)</button>		
+		<button onclick="function_call_bin_display_function(mul_once,getInput1int(), getInput2int())"> mul_once(Input1, Input2)</button>
+	
+		
+	</div>
+	<div class="Aufgabe" id="a1_12">
+		<h3>Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, 
+		die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); 
+		Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.</h3>
+		<pre>
+			<code class="language-javascript">
+	function counterf(start)
+	{
+	  
+	  var count = start;
+	  return {
+		  inc: function()
+		  {
+			count++;
+			return count;
+		  },
+		  dec: function()
+		  {
+			count--;
+			return count;
+		  }
+	  }
+	}
+	
+	counter = counterf(10);
+	
+	</code>
+		</pre>
+
+		<button onclick="counter = counterf(10); simple_display_function('counter = counterf(10)')"> counter = counterf(10);  </button>		
+		<button onclick="counter = counterf(getInput1int()); simple_display_function('counter = counterf(getInput1int())')"> counter = counterf(Input1);  </button>		
+		
+		<button onclick="simple_display_function(counter.inc())"> counter.inc()</button>
+		<button onclick="simple_display_function(counter.dec())"> counter.dec()</button>
+	</div>
+	<div class="Aufgabe" id="a1_13">
+		<h3>Schreiben Sie eine rücknehmbare Funktion revocable(), 
+		die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. 
+		Sobald die Funktion aber mit revoke() zurück genommen wurde, 
+		führt ein erneuter Aufruf zu einem Fehler. Z.B.<br>
+		temp = revocable(alert);<br>
+		temp.invoke(7); // führt zu alert(7);<br>
+		temp.revoke();<br>
+		temp.invoke(8); // Fehlerabbruch!</h3>
+		<pre>
+			<code class="language-javascript">
+	
+	function revocable(_f)
+	{
+	  var f=_f
+	  return{
+		invoke: function(x){
+		  if(f==null)
+			throw "function is revoked";
+		  return f(x);
+		},
+		revoke: function()
+		{
+		  f=null;
+		}
+	  }
+	}
+	
+	temp = revocable(alert);
+	
+	</code>
+	</pre>
+
+	<button onclick="temp = revocable(alert); simple_display_function('temp = revocable(alert);')"> temp = revocable(alert);</button>		
+	<button onclick="temp.revoke(); simple_display_function('temp.revoke();')"> temp.revoke();</button>		
+		
+	<button onclick="function_call_uni_display_function(temp.invoke,7)"> temp.invoke(7)</button>
+	<button onclick="function_call_uni_display_function(temp.invoke,getInput3())"> temp.invoke(Input3)</button>
+	
+		
+	</div>
+<div class="Aufgabe">
+
+		<h3>Implementieren Sie ein "Array Wrapper"-Objekt mit den Methoden get, 
+		store und append, so dass ein Angreifer keinen 
+		Zugriff auf das innere, private Array hat.
+<br>
+		my_vector = vector(); <br>
+		my_vector.append(7);<br>
+		my_vector.store(1, 8);<br>
+		my_vector.get(0) // 7<br>
+		my_vector.get(1) // 8 <br>
+		</h3>
+		<pre>
+			<code class="language-javascript">
+	
+	function vector()
+	{
+	  var elements = [];
+	  return {
+			
+		get: function(i)
+		{
+		  return elements[i];
+		},
+		store: function(i,x)
+		{
+		  elements[i] = x;
+		},
+		append: function(x)
+		{
+		  elements.push(x);
+		}
+	  }
+	}
+
+	my_vector = vector();
+	my_vector.append(7);
+	my_vector.store(1, 8);
+	
+	</code>
+	</pre>
+
+	<button onclick="my_vector = vector(); simple_display_function('my_vector = vector();')"> my_vector = vector()</button>		
+	<button onclick="my_vector.append(getInput3()); simple_display_function('my_vector.append('+getInput3()+')')"> append(Input3)</button>		
+	<button onclick="my_vector.store(getInput1int(),getInput3()); simple_display_function('my_vector.store('+getInput1()+','+getInput3()+');')"> store(Input1,Input3)</button>		
+	<button onclick="my_vector.get(getInput1int()); simple_display_function(my_vector.get(getInput1()))"> get(Input1)</button>		
+		
+	
+		
+
+</div>
+
+</div>
+<div class="ConsoleContainer">
+<div>
+<button onclick="clearConsole()"> clearConsole()</button> <br>
+
+<label for="Input1">Input1:</label>
+<input type="number" name="Input1" id="Input1">
+<br>
+<label for="Input2">Input2:</label>
+<input type="number" name="Input2" id="Input2">
+<br>
+<label for="Input3">Input3:</label>
+<input type="text" name="Input3" id="Input3">
+</div>
+<div>
+<h1> Console </h1>
+<div id="Console"> </div>
+</div>
+</div>
+</div>
+</body>
+
+
+</html>
+
