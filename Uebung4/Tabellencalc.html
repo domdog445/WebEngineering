@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" href="../Ressource/favicon.svg" sizes="any" type="image/svg+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Tabellencalc</title>
+	<style>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr 3fr;
+	  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+	}
+	.grid-item {
+	  border: black solid 1px;
+	}
+	
+	.grid-item-des{
+	  border: black solid 1px;
+	  background-color: #DDDDDD
+	}
+	.infotable{
+		  border: black solid 1px;
+	  background-color: #DDDDDD
+	}
+	</style>
+</head>
+
+<body>
+	<h1>Tabellenkalkulation mit contentEditable</h1>
+  
+<div class="grid-container" id="grid-container">
+</div> 
+
+
+	<script src="Tabellencalc.js"></script> 
+	
+		<h3> Funktionen:</h3>
+	<table class="infotable">
+  <tr>
+    <th>=sum(v1,v2,...)</th>
+    <th>v1+v2+...</th>
+  </tr>
+  
+  <tr>
+    <th>=sub(v1,v2,...)</th>
+    <th>v1-v2-...</th>
+  </tr>
+  
+  <tr>
+    <th>=div(v1,v2,...)</th>
+    <th>v1/v2/...</th>
+  </tr>
+  
+  <tr>
+    <th>=mul(v1,v2,...)</th>
+    <th>v1*v2*...</th>
+  </tr>
+  
+  
+   <tr>
+    <th>=pow(v1,v2)</th>
+    <th>Math.pow(v1,v2)</th>
+  </tr>
+  
+  <tr>
+    <th>=sqrt(v1)</th>
+    <th>Wurzel von v1</th>
+  </tr>
+	
+	
+
+
+</body>
+
+
+</html>
+
