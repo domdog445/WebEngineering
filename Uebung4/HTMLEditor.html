@@ -40,10 +40,25 @@
 			margin: 5px 5px 5px 5px;
 		}
 		
+		.menu-item{
+			position: relative;
+		}
+		.menu-item div {
+			height: 0px;
+			overflow: hidden;
+			position: absolute;
+			top: 17px;
+			Left: 0;
+		}
+
+		.menu-item:hover div {
+			height: auto;
+			padding: 0px 0px 0px 0px
+		}
 	</style>
 </head>
 
-<body onkeydown="myFunction(event)">
+<body>
 
 <h1>Tabellenkalkulation mit contentEditable</h1>
 <div id="toolbar">
@@ -149,25 +164,5 @@
 
 </body>
 
-
-<style>
-.menu-item{
-	position: relative;
-}
-.menu-item div {
-	height: 0px;
-	overflow: hidden;
-    position: absolute;
-	top: 17px;
-	Left: 0;
-}
-
-.menu-item:hover div {
-	height: auto;
-	padding: 0px 0px 0px 0px
-}
-
-
-</style>
 </html>
 

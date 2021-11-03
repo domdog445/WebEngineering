@@ -1,10 +1,14 @@
-var AddEntryInput = document.getElementById('newEntryInput');
-var AddEntryButton = document.getElementById('newEntryButton');
+//Dom Elemente
+const AddEntryInput = document.getElementById('newEntryInput');
+const AddEntryButton = document.getElementById('newEntryButton');
+const Container  = document.getElementById('Einkaufsliste');
 
-AddEntryButton.addEventListener ('click', addEntry, true);
+//Variablen
 let actualEntry = 1;
-var Container  = document.getElementById('Einkaufsliste');
 
+AddEntryInput.focus();
+//Add Eventlistener
+AddEntryButton.addEventListener ('click', addEntry, true);
 AddEntryInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       addEntry();
@@ -13,13 +17,12 @@ AddEntryInput.addEventListener('keypress', function (e) {
 
 
 
-
+//nötige Funktionen
 
 function DeleteEntry(obj) {
   Container.removeChild(obj);
  }
  
-
 function addEntry()
 {
 	if(AddEntryInput.value.length===0)
@@ -41,10 +44,9 @@ function addEntry()
 	
 
 	
-	
 	Container.appendChild(li);
 	
-	
+	//Listener für die Button Funktionalität hinzufügen
 	DelButton = document.getElementById('Del'+actualEntry);
 	DelButton.addEventListener ('click', 
 				function() {   DeleteEntry(li)}, true);
@@ -63,17 +65,24 @@ function addEntry()
 	AddEntryInput.value = "";
 }
  
- 
+ //Zusätzliche Funktionen für mehr Funktionalität
 function Up(obj) {
-  const frag = document.createDocumentFragment();
+
   
+  //Die Objekte beschaffen
+  const frag = document.createDocumentFragment();
   var list = document.querySelector("ul");
   var items = list.querySelectorAll("li");
   var itemsArr = Array.from(items)
   var arrPos = itemsArr.indexOf(obj);
+  
+  
   if(arrPos <= 0)
 	  return
+  
+  //Ändern der Reihenfolge
   let otherObj = itemsArr[arrPos-1];
+  
   itemsArr[arrPos-1] = obj;
   itemsArr[arrPos] = otherObj;
 
@@ -84,18 +93,24 @@ function Up(obj) {
 }
 
 function Down(obj) {
+
+  //Die Objekte beschaffen
   const frag = document.createDocumentFragment();
-  
   var list = document.querySelector("ul");
   var items = list.querySelectorAll("li");
   var itemsArr = Array.from(items)
   var arrPos = itemsArr.indexOf(obj);
+  
   if(arrPos >= itemsArr.length-1)
 	  return
+  
+  //Ändern der Reihenfolge
   let otherObj = itemsArr[arrPos+1];
+  
   itemsArr[arrPos+1] = obj;
   itemsArr[arrPos] = otherObj;
 
+  
   for (let item of itemsArr) {
     frag.appendChild(item);
   }

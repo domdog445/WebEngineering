@@ -1,12 +1,16 @@
 //Make Editable
 var editor = document.getElementById("Editor");
 var hexdezColorInput = document.getElementById("hexdezColor");
-editor.contentEditable = "true"; 
+
 
 
 var backColorContainer = document.getElementById("backColorContainer");
 var foreColorContainer = document.getElementById("foreColorContainer");
 
+//Make Editable
+editor.contentEditable = "true"; 
+
+//Hinzufügen von StartButtons für die Farben
 addBackColor("#000000");
 addBackColor("#FFFFFF");
 addBackColor("#FF0000");
@@ -19,30 +23,39 @@ addForeColor("#FF0000");
 addForeColor("#00FF00");
 addForeColor("#0000FF");
 
+//Hinzufügen von Farben für dynamische Farbverwaltung
 function addBackColor(col=hexdezColorInput.value)
 {
+	//Entferne den ältesten Eintrag wenn es bereits 5 Einträge gibt
 	if(backColorContainer.childElementCount >=5)
 		backColorContainer.removeChild(backColorContainer.childNodes[0]); 
-	var btn = document.createElement("BUTTON");   // Create a <button> element
+	
+	//Erstelle einen Button
+	var btn = document.createElement("BUTTON");   
 	btn.innerHTML = "<i class='fas fa-font' style='background:"+col+"'></i> " + "<i class='fas fa-paint-brush' style='color:"+col+"'></i>";                  // Insert text
 	
+	//Füge den Listener hinzu
 	btn.addEventListener("click", function()
 	{
 		pressButtBackColor(col);
 		
 	}); 
 	
-	backColorContainer.appendChild(btn);               // Append <button> to <body> 
+	backColorContainer.appendChild(btn);               
 	
 	
 }
 function addForeColor(col=hexdezColorInput.value)
 {
+	//Entferne den ältesten Eintrag wenn es bereits 5 Einträge gibt
 	if(foreColorContainer.childElementCount >=5)
 		foreColorContainer.removeChild(foreColorContainer.childNodes[0]); 
+	
+	//Erstelle einen Button
 	var btn = document.createElement("BUTTON");   // Create a <button> element
 	btn.innerHTML = "<i class='fas fa-font' style='color:"+col+"'></i> " + "<i class='fas fa-paint-brush' style='color:"+col+"'></i>";                  // Insert text
 	
+	//Füge den Listener hinzu
 	btn.addEventListener("click", function()
 	{
 		pressButtColor(col);
@@ -55,13 +68,6 @@ function addForeColor(col=hexdezColorInput.value)
 }
 
 
-
-function myFunction(event) {
-  if (event.keyCode == 16) {
-    // Execute command if user presses the SHIFT button:
-    document.execCommand("bold");
-  }
-}
 function pressButtWithVal(command,val)
 {
 	document.execCommand(command, false, val);
@@ -86,7 +92,7 @@ function SelectSize()
 
 
 
-
+//PressToolButton
 function pressButt(command)
 {
 	console.log("pressed:"+ command);
@@ -104,10 +110,13 @@ function pressButt(command)
 	
 }
 
+//Press Button für Textfarbe
 function pressButtColor(value= hexdezColorInput.value)
 {
 	document.execCommand('foreColor', false, value);
 }
+
+//Press Button für Hintergrundfarbe
 function pressButtBackColor(value= hexdezColorInput.value)
 {
 	document.execCommand('backColor', false, value);

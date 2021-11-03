@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" href="../Ressource/favicon.svg" sizes="any" type="image/svg+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Primzahlen</title>
+	
+	
+</head>
+<style>
+	#container, #animate {
+		width:100%;
+		height: 4em;
+	}
+	#container {
+		background-color: lightgrey;
+	}
+	#animate {
+		background-color: yellow;
+	}
+	.primzahl {
+		display: inline;
+	}
+	#primzahlen {
+		overflow-y: scroll;
+	}
+	body{
+		display: grid;
+		grid-template-rows:4em 1fr;
+	}
+	
+	html, 
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	
+	
+</style>
+
+
+<body>
+<div id="container">
+	<div id="animate"> </div>
+</div>
+<div id="primzahlen"> </div>
+</body>
+
+
+
+<script>
+
+	const container = document.getElementById("container");
+	const animate = document.getElementById("animate");
+	const primzahlenContainer = document.getElementById("primzahlen");
+	let width = 1;
+	let animation = requestAnimationFrame(step);
+
+	console.log("start");
+	
+	const worker = new Worker("PrimzahlenWebworkerPrime.js");
+	worker.addEventListener('message', function(i)
+	{
+		primzahlenContainer.innerHTML += '<div class="primzahl">'+i.data+' </div>';
+	});
+	worker.postMessage(2);
+	function step() {
+	width +=1;
+	if(width ===100) width = 1;
+	animate.style.width = width + "%";
+	animation = requestAnimationFrame(step);
+	
+	}
+	console.log("end pri Script");
+</script> 

@@ -1,10 +1,19 @@
+//Dom Elemente
 var AddEntryInput = document.getElementById('newEntryInput');
 var AddEntryButton = document.getElementById('newEntryButton');
-
-AddEntryButton.addEventListener ('click', addEntry, true);
-let actualEntry = 1;
 var Container  = document.getElementById('Rednerliste');
 
+//Variablen
+let actualEntry = 1;
+
+var lastInterval;
+map = new Map();	
+var currentElementKey;
+var currentElement;
+
+
+//Add Eventlistener
+AddEntryButton.addEventListener ('click', addEntry, true);
 AddEntryInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       addEntry();
@@ -13,60 +22,54 @@ AddEntryInput.addEventListener('keypress', function (e) {
 
 
 
-	var lastInterval;
-	
-	map = new Map();
-	
-	var currentElementKey;
-	var currentElement;
-	
-	function Start (ID)
-	{
-		currentElement = document.getElementById("Time" + ID);
-		
-		if(map.get(ID)=== undefined)
-			map.set(ID,0);
-		if(lastInterval!== 'undefined')
-			clearInterval(lastInterval);
-		lastInterval = setInterval(doInterval, 1000);
-		
-		currentElementKey = ID;
-		
-		
-		StopButton = document.getElementById("Stop" + ID);
-		MakeObjVisible(StopButton);
-		
-		StartButton = document.getElementById("Start" + ID);
-		MakeObjHide(StartButton);
-		
-	}
-	
-	function Stop(ID)
-	{
-		if(lastInterval!== 'undefined')
-			clearInterval(lastInterval);
-		StartButton = document.getElementById("Start" + ID);
-		MakeObjVisible(StartButton);
-		StopButton = document.getElementById("Stop" + ID);
-		MakeObjHide(StopButton);
-	}
-	
-	function doInterval()
-	{
-		
-		map.set(currentElementKey,map.get(currentElementKey)+1);
-		console.log(map.get(currentElementKey));
-		
-		
-		
-		
-		currentElement.innerHTML =  map.get(currentElementKey).toTime();
-		
-		
-		
-	}
+
+//Starte eine Funktion mit der ID
+function Start (ID)
+{
+	currentElement = document.getElementById("Time" + ID);
 	
 	
+	//Falls noch kein Eintrag für die ID existiert, erstelle einen
+	if(map.get(ID)=== undefined)
+		map.set(ID,0);
+	if(lastInterval!== 'undefined')
+		clearInterval(lastInterval);
+	lastInterval = setInterval(doInterval, 1000);
+	
+	currentElementKey = ID;
+		
+		
+	StopButton = document.getElementById("Stop" + ID);
+	MakeObjVisible(StopButton);
+		
+	StartButton = document.getElementById("Start" + ID);
+	MakeObjHide(StartButton);
+		
+}
+
+//Stoppe die Zeit
+function Stop(ID)
+{
+	if(lastInterval!== 'undefined')
+		clearInterval(lastInterval);
+	StartButton = document.getElementById("Start" + ID);
+	MakeObjVisible(StartButton);
+	StopButton = document.getElementById("Stop" + ID);
+	MakeObjHide(StopButton);
+}
+
+//Erhöhe den Zähler bei jedem Interval
+function doInterval()
+{
+		
+	map.set(currentElementKey,map.get(currentElementKey)+1);
+	console.log(map.get(currentElementKey));
+
+	currentElement.innerHTML =  map.get(currentElementKey).toTime();
+		
+}
+	
+//Für die Darstellung als Uhrzeit
 Number.prototype.toTime = function () {
     var sec = this%60;
 	var min = Math.floor(this/60);
@@ -79,7 +82,7 @@ Number.prototype.toTime = function () {
 	
 }	
 
-
+//Sichtbarkeitsfunktionen
 function MakeObjHide(obj)
 {
 	obj.style.display = "none";

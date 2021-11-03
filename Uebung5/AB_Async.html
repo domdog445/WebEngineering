@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> AB-Async</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="http://www2.inf.h-brs.de/~dzens2s/"> 
+	
+	
+</head>
+
+<body>
+	<div id="Status"> Load A.txt & B.txt kontaktinierend </div>
+	<div id="ABs"> </div>
+</body>
+
+
+<script>
+var Status = document.getElementById('Status');
+var ABs = document.getElementById('ABs');
+
+var get = async function(url)
+{
+	return new Promise(function(resolve,reject)
+	{
+		var req = new XMLHttpRequest();
+		req.open("GET",url);
+		req.onload = function(){
+			if(req.status === 200)
+			{
+				resolve(req.response);
+			}
+			else
+			{
+				reject(Error(req.statustext));
+				
+			}
+		}
+		req.onerror = function(){
+			rejectedFunction("Datei konnte nicht geladen werden");
+			reject(Error("Network Error"));
+			
+		}
+
+		req.send();
+
+	});
+}
+
+var atxt = "";
+var btxt = "";
+
+konkatenier();
+
+async function konkatenier() {
+	const Patxt = get("http://www2.inf.h-brs.de/~dzens2s/Uebung5/A.txt")
+	const Pbtxt = get("http://www2.inf.h-brs.de/~dzens2s/Uebung5/B.txt")
+
+	// 1. die Ausführung erfolgt fast sofort
+	atxt = await Patxt; // 2. das hier startet 2 Sekunden nach 1.
+	btxt = await Pbtxt; // 3. das hier startet 2 Sekunden nach 1., also sofort nach 2., da "fast" bereits aufgelöst ist
+
+
+	result = "";
+					
+	allA = atxt.split("\r\n");
+	allB = btxt.split("\r\n");
+					
+	i = 0;
+					
+	while(i < allA.length || i < allB.length)
+	{
+		if(i < allA.length)
+		{
+			result += allA[i] +"\r\n";
+		}
+		if(i < allB.length)
+		{
+			result += allB[i] +"\r\n";
+		}
+		i++;
+	}
+			
+			
+	Status.innerHTML = "A.txt + B.txt konkateniert ";
+	ABs.innerHTML = result;
+}
+
+function rejectedFunction(e)
+{
+Status.innerHTML = "Fehler beim laden einer Datei: " + e
+
+}
+
+
+
+
+</script>
+
+
+</html>
+

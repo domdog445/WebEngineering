@@ -140,7 +140,7 @@ function edited(newVal,obj)
 			console.log(allvals);
 			
 			var arrval = allvals.split(",");
-			obj.textContent = Math.pow(arrval[0],arrval[1]);
+			obj.textContent = Math.pow(getIntVal(arrval[0]),getIntVal(arrval[1]));
 			
 		}
 		
@@ -151,7 +151,7 @@ function edited(newVal,obj)
 			console.log(allvals);
 			
 			var arrval = allvals.split(",");
-			obj.textContent = Math.sqrt(arrval[0]);
+			obj.textContent = Math.sqrt(getIntVal(arrval[0]));
 			
 		}
 		
