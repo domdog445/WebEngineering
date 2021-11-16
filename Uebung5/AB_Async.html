@@ -56,9 +56,9 @@ async function konkatenier() {
 	const Patxt = get("http://www2.inf.h-brs.de/~dzens2s/Uebung5/A.txt")
 	const Pbtxt = get("http://www2.inf.h-brs.de/~dzens2s/Uebung5/B.txt")
 
-	// 1. die Ausführung erfolgt fast sofort
-	atxt = await Patxt; // 2. das hier startet 2 Sekunden nach 1.
-	btxt = await Pbtxt; // 3. das hier startet 2 Sekunden nach 1., also sofort nach 2., da "fast" bereits aufgelöst ist
+	
+	atxt = await Patxt; 
+	btxt = await Pbtxt; 
 
 
 	result = "";

@@ -1,0 +1,42 @@
+{
+  "Parteien": [
+    {
+      "name": "SPD",
+      "Sitze": 206,
+      "Farbe": "#E3010F"
+    },
+    {
+      "name": "CDU/CDU",
+      "Sitze": 197,
+      "Farbe": "#000000"
+    },
+    {
+      "name": "Die Gruenen",
+      "Sitze": 118,
+      "Farbe": "#65A129"
+    },
+    {
+      "name": "FDP",
+      "Sitze": 92,
+      "Farbe": "#FFE300"
+    },
+    {
+      "name": "AfD",
+      "Sitze": 82,
+      "Farbe": "#00ACD3"
+    },
+    {
+      "name": "Die Linke",
+      "Sitze": 39,
+      "Farbe": "#E60E98"
+    },
+    {
+      "name": "fraktionslos",
+      "Sitze": 2,
+      "Farbe": "#999999"
+    }
+  ]
+
+
+
+}
