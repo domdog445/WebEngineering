@@ -35,8 +35,8 @@ httpServer.listen(8080);
 app.get('/', function (req, res) {
     res.header('Content-type', 'text/html');
     return res.end(	`<h1> Willkommen beim Gen/Merge Tool </h1>
-		 <a href="/genFiles">Hier geht es zum generieren von Dateien</a>'
-		 <a href="/MergeFiles">Hier geht es zum konkatenieren der Dateien</a>'`
+		 <a href="/genFiles">Hier geht es zum generieren von Dateien</a><br><br>
+		 <a href="/MergeFiles">Hier geht es zum konkatenieren der Dateien</a>`
 		
 	);
 	

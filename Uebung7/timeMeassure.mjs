@@ -37,8 +37,8 @@ async function genFiles()
 async function test()
 {
 	console.time("Generate Files");
-	await Promise.all([genNumberFile(20000,"input1.txt"),
-						genAlphaFile(20000,"input2.txt")]);
+	await Promise.all([genNumberFile(10000 ,"input1.txt"),
+						genAlphaFile(10000 ,"input2.txt")]);
 	console.timeEnd("Generate Files")
 	
 	
@@ -47,6 +47,6 @@ async function test()
 	console.timeEnd("MergeFileStream")
 
 	console.time("MergeFsFile");
-	//await MergeFsFile("input1.txt","input2.txt","outputfile.txt")
+	await MergeFsFile("input1.txt","input2.txt","outputfile.txt")
 	console.timeEnd("MergeFsFile")
 }

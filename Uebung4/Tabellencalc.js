@@ -47,7 +47,6 @@ console.log(container);
 function getChar(val)
 {
 	return String.fromCharCode(65 + val);
-	
 }
 String.prototype.isInt = function()
 {

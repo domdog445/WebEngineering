@@ -7,6 +7,7 @@ const Container  = document.getElementById('Einkaufsliste');
 let actualEntry = 1;
 
 AddEntryInput.focus();
+
 //Add Eventlistener
 AddEntryButton.addEventListener ('click', addEntry, true);
 AddEntryInput.addEventListener('keypress', function (e) {
