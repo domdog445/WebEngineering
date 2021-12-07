@@ -1,0 +1,17 @@
+{
+    "name": "WWW-Navigator",
+    "short_name": "WWW-N",
+    "description": "Nachschlagewerk für WWW-Technologien",
+    "icons": [
+      {
+        "src": "/../images/splash-screen.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+  }
