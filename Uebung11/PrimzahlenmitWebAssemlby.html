@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Domenic Overview 11</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+    table, th, td {
+    border: 1px solid black;
+    }
+    
+    </style>
+</head>
+
+<body>
+	<h1>Hier werden die 2 Primzahlberechnungen für unterschiedliche Bereiche durchgeführt und angezeigt. Insgesamt wird jede Anzahl 10 mal berechnet.</h1>
+    <h2>Ein Refresh verursacht eine Neuberechnung und somit andere Werte</h2>
+	<table>
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="3">Messung JavaScript</th>
+            <th colspan="3">Messung Wasm</th>
+            <th colspan="3">Anzahl Primzahlen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>min</th>
+            <th>max</th>
+            <th>avg</th>
+            <th>min</th>
+            <th>max</th>
+            <th>avg</th>
+          </tr>
+          <tr id="R10">
+            <td>10</td>
+          </tr>
+          <tr  id="R100">
+            <td>100</td>
+          </tr>
+          <tr id="R1000">
+            <td>1000</td>
+          </tr>
+          <tr id="R10000">
+            <td>10000</td>
+          </tr>
+          <tr id="R100000">
+            <td>100000</td>
+          </tr>
+        </tbody>
+        </table>
+	
+</body>
+
+
+</html>
+
+
+<script>
+    function TimeTestFunction(f,amount)
+    {
+        var start = performance.now();
+        var result = f(amount);
+        var end = performance.now();
+        return {time: end-start, "result": result};
+    }
+
+    function addTD(value,parent_element)
+    {
+        let td = document.createElement("td");
+        td.innerHTML=value;
+        parent_element.append(td)
+    }
+    function getBenchmark(arr)
+    {
+        var min = Infinity;
+        var max = -Infinity;
+        var sum = 0;
+        var vals = [];
+        for(var i = 0; i < arr.length;i++)
+        {
+            var val = arr[i].time
+            if(val < min)
+                min = val;
+            if(val > max)
+                max = val;
+            sum+=val;
+            vals.push(val);
+        }
+
+        var avg = sum/ arr.length;
+        
+        return {
+            min: min,
+            max: max,
+            avg: avg,
+            vals: vals
+        }
+    }
+</script>
+
+
+<script>
+// Calc Prim in JavaScript
+var prims = [];
+
+function testPrimJS(numb)
+{
+	for(let i = 0; i < prims.length;i++)
+	{
+		if(numb%prims[i]==0)
+			return false;
+	}
+	prims.push(numb);
+	return true;
+}
+
+function testprimsJS(amount)
+{
+    prims = [];
+    for(var i= 2; i<amount ;i++)
+    {
+        testPrimJS(i);
+    }
+    return prims.length;
+}
+var MessungJS = [[],[],[],[],[]];
+for(var i = 0; i <10;i++)
+{
+    MessungJS[0].push(TimeTestFunction(testprimsJS,10))
+    MessungJS[1].push(TimeTestFunction(testprimsJS,100))
+    MessungJS[2].push(TimeTestFunction(testprimsJS,1000))
+    MessungJS[3].push(TimeTestFunction(testprimsJS,10000))
+    MessungJS[4].push(TimeTestFunction(testprimsJS,100000))
+}
+console.log(MessungJS);
+
+</script>
+
+<script>
+
+var MessungWASM = [[],[],[],[],[]];
+fetch('CalcPrimZahlen.wasm').then(response =>
+  response.arrayBuffer()
+).then(bytes =>
+  WebAssembly.instantiate(bytes,{})
+).then(wasmInstance => {
+    console.time("CalcPrim-WASM")
+    const {testPrims} = wasmInstance.instance.exports;
+
+    for(var i = 0; i <10;i++)
+    {
+        MessungWASM[0].push(TimeTestFunction(testPrims,10))
+        MessungWASM[1].push(TimeTestFunction(testPrims,100))
+        MessungWASM[2].push(TimeTestFunction(testPrims,1000))
+        MessungWASM[3].push(TimeTestFunction(testPrims,10000))
+        MessungWASM[4].push(TimeTestFunction(testPrims,100000))
+    }
+    
+    for (var i = 0; i<5;i++)
+    {
+        element = document.getElementById("R"+(Math.pow(10,(i+1))));
+        
+        var Messergebniss = getBenchmark(MessungJS[i])
+
+        addTD(Messergebniss.min,element);
+        addTD(Messergebniss.max,element);
+        addTD(Messergebniss.avg,element);
+
+        var Messergebniss = getBenchmark(MessungWASM[i])
+
+        addTD(Messergebniss.min,element);
+        addTD(Messergebniss.max,element);
+        addTD(Messergebniss.avg,element);
+
+        addTD(MessungJS[i][0].result,element);
+    }
+        
+
+    
+});
+
+
+
+
+
+
+</script>
