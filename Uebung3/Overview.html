@@ -8,6 +8,8 @@
 	#console {
 		background-color: #000000;
 		color: #00FF00;
+		height: auto;
+		min-height: 20em;
 	}
 	
 	pre {
@@ -18,35 +20,46 @@
 	.flexContainer{
 		display: flex;
 		height: 100%;
-		
+		align-items: center;
+  		justify-content: center;
 	}
 	.ConsoleContainer{
 		display: flex;
 		flex-direction: column;
+		grid-area: "ConsoleContainer";
 	}
 	
 	.AufgabenContainer{
-	
+		display: flex;
+		height: 100%;
+		
+  		justify-content: center;
+		align-items: stretch;
+		grid-area: "AufgabenContainer";
 	}
-	.Aufgabe
+	.Aufgabehidden
 	{
 	visibility:hidden;
+	
 	height: 0px;
+	width: 0px;
+	margin: 0px 0px 0px 0px;
+	display:none;
+	}
+	.Aufgabevisible
+	{
+	visibility:visible;
+	width: 100%;
 	margin: 0px 0px 0px 0px;
 	display: inline-block;
 	}
-	
+
 	body
 	{
 		display: grid;
 		grid-template-columns:1fr auto;
-		grid-template-areas: "Header Header"
+		grid-template-areas: "Nav Nav"
 							 "AufgabeContainer ConsoleContainer"
-	}
-	header
-	{
-	grid-area: Header;
-	border: 1px solid black
 	}
 	
 	button{
@@ -55,7 +68,21 @@
 		padding: 5px 10px 5px 10px ;
 		border-radius: 10px 10px 10px 10px;
 	}
-	
+	.NavButtons{
+		grid-area: Nav;
+	}
+
+	@media only screen and (max-width: 600px) {
+		body
+		{
+			display: grid;
+			grid-template-columns:1fr;
+			grid-template-areas: "Nav"
+								 "AufgabeContainer" 
+								 "ConsoleContainer"
+		}
+	}
+
 	</style>
 	
 </head>
@@ -338,7 +365,7 @@ my_vector.store(1, 8);
 	
 	
 ////////////////////////////	
-//Funktionen der Aufgabe 1 
+//Funktionen der Aufgabe 2
 ////////////////////////////	
 function pubsub()
 {
@@ -600,26 +627,21 @@ var mulc = binaryc(mul);
 	{
 		if(currentView === null)
 		{
-			currentView = document.getElementById("erkl");
+			currentView = document.getElementById("a0");
 		}
-		currentView.style.visibility = "hidden";
-		currentView.style.height = "0px";
-		if(i===0)
-		{
-			currentView = document.getElementById("erkl");
-		}
-		else
-		{
+		currentView.className = "Aufgabehidden";
+		
+		
 			currentView = document.getElementById("a"+i);
-		}
-		currentView.style.visibility = "visible";
+		
+		currentView.className = "Aufgabevisible";
 		
 	}
 </script>
 
 <body>
-<header>
-<Button onclick="viewAufgabe(0)"> Erklärung</button>
+<div class="NavButtons">
+<Button onclick="viewAufgabe('0')"> Erklärung</button>
 <Button onclick="viewAufgabe('1_1')"> 1.1</button>
 <Button onclick="viewAufgabe('1_2')"> 1.2</button>
 <Button onclick="viewAufgabe('1_3')"> 1.3</button>
@@ -650,9 +672,9 @@ var mulc = binaryc(mul);
 <Button onclick="viewAufgabe('2_14')"> 2.14</button>
 <Button onclick="viewAufgabe('2_15')"> 2.15</button>
 <Button onclick="viewAufgabe('2_16')"> 2.16</button>
-</header>
+</div>
 <div class="AufgabenContainer">
-	<div class="Erklaerung" id="erkl">
+	<div class="Aufgabevisible" id="a0">
 	<h3>Auf dieser Seite sind dir bearbeiteten JavaScript Aufgaben präsentiert. <br>
 		Dabei sind die Lösungen möglichst interaktiv aufbereitet und können per Buttondruck ausgeführt werden.
 		Die dabei entstehende Ausgabe erscheint rechts im Console div<br>
@@ -677,7 +699,7 @@ var mulc = binaryc(mul);
 
 	</div>
 <!-- Aufgabe 1-->
-	<div class="Aufgabe" id="a1_1">
+	<div class="Aufgabehidden" id="a1_1">
 		<h3>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.</h3>
 		<pre>
 			<code class="language-javascript">
@@ -697,7 +719,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function(identity_function('hallo')())"> identity_function("hallo")()</button>
 		<button onclick="simple_display_function(identity_function(getInput3())())"> identity_function(Input3)()</button>
 	</div>
-	<div class="Aufgabe" id="a1_2">
+	<div class="Aufgabehidden" id="a1_2">
 		<h3>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. 
 		    (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, 
 			die auf y angewandt wird.)</h3>
@@ -718,7 +740,7 @@ var mulc = binaryc(mul);
 		<button onclick="uni_uni_display_function(addf,67,-25)"> addf(67)(-25)</button>
 		<button onclick="uni_uni_display_function(addf,getInput1int(),getInput2int())"> addf(Input1)(Input2)</button>
 	</div>
-	<div class="Aufgabe" id="a1_3">
+	<div class="Aufgabehidden" id="a1_3">
 		<h3>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) 
 		eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, 
 		z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend 
@@ -746,7 +768,7 @@ var mulc = binaryc(mul);
 		<button onclick="uni_uni_display_function(applyf(mul),getInput1int(),getInput2int())"> applyf(mul)(Input1)(Input2)</button>
 		<button onclick="uni_uni_display_function(applyf(add),getInput1int(),getInput2int())"> applyf(add)(Input1)(Input2)</button>
 	</div>
-	<div class="Aufgabe" id="a1_4">
+	<div class="Aufgabehidden" id="a1_4">
 		<h3>Schreiben Sie eine Funktion curry() (von Currying), 
 		die eine binäre Funktion und ein Argument nimmt, 
 		um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, 
@@ -771,7 +793,7 @@ var mulc = binaryc(mul);
 		<button onclick="uni_display_function(curry(mul,getInput1int()),getInput2int())"> curry(mul,Input1)(Input2)</button>
 		<button onclick="uni_display_function(curry(add,getInput1int()),getInput2int())"> curry(add,Input1)(Input2)</button>
 	</div>
-	<div class="Aufgabe" id="a1_5">
+	<div class="Aufgabehidden" id="a1_5">
 		<h3>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben,
 		ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch 
 		direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten 
@@ -795,7 +817,7 @@ var mulc = binaryc(mul);
 		<button onclick="uni_display_function(inc3,41)"> inc3(41)</button>
 		<button onclick="uni_display_function(inc3,getInput1int())"> inc3(Input1)</button>
 	</div>
-	<div class="Aufgabe" id="a1_6">
+	<div class="Aufgabehidden" id="a1_6">
 		<h3>Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine 
 		unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.</h3>
 		<pre>
@@ -819,7 +841,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function((3).mul(4))"> (3).mul(4)</button>		
 		<button onclick="simple_display_function((getInput1int()).mul(getInput2int()))"> (Input1).mul(Input2)</button>
 	</div>
-	<div class="Aufgabe" id="a1_7">
+	<div class="Aufgabehidden" id="a1_7">
 		<h3>Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre 
 		Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.</h3>
 		<pre>
@@ -842,7 +864,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function(demethodize(Number.prototype.mul)(getInput1int(), getInput2int()))"> demethodize(Number.prototype.mul)(Input1, Input2)</button>
 		
 	</div>
-	<div class="Aufgabe" id="a1_8">
+	<div class="Aufgabehidden" id="a1_8">
 		<h3>Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion 
 		umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); 
 		double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.</h3>
@@ -859,7 +881,7 @@ var mulc = binaryc(mul);
 
 	var double = twice(add);
 	var square = twice(mul);
-	</code>
+			</code>
 		</pre>
 
 		<button onclick="simple_display_function(double(5))"> double(5)</button>		
@@ -868,7 +890,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function(square(5))"> twice(5)</button>		
 		<button onclick="simple_display_function(square(getInput1int()))"> twice(Input1)</button>
 	</div>
-	<div class="Aufgabe" id="a1_9">
+	<div class="Aufgabehidden" id="a1_9">
 		<h3>Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne 
 		unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll 
 		composeu(double, square)(3) genau 36 ergeben.</h3>
@@ -892,7 +914,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function(composeu(square, double)(getInput1int()))"> composeu(square, double)(Input1)</button>
 		
 	</div>
-	<div class="Aufgabe" id="a1_10">
+	<div class="Aufgabehidden" id="a1_10">
 		<h3>Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, 
 		die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.</h3>
 		<pre>
@@ -917,7 +939,7 @@ var mulc = binaryc(mul);
 
 		
 	</div>
-	<div class="Aufgabe" id="a1_11">
+	<div class="Aufgabehidden" id="a1_11">
 		<h3>Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, 
 		aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, 
 		beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.</h3>
@@ -958,7 +980,7 @@ var mulc = binaryc(mul);
 	
 		
 	</div>
-	<div class="Aufgabe" id="a1_12">
+	<div class="Aufgabehidden" id="a1_12">
 		<h3>Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, 
 		die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); 
 		Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.</h3>
@@ -993,7 +1015,7 @@ var mulc = binaryc(mul);
 		<button onclick="simple_display_function(counter.inc())"> counter.inc()</button>
 		<button onclick="simple_display_function(counter.dec())"> counter.dec()</button>
 	</div>
-	<div class="Aufgabe" id="a1_13">
+	<div class="Aufgabehidden" id="a1_13">
 		<h3>Schreiben Sie eine rücknehmbare Funktion revocable(), 
 		die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. 
 		Sobald die Funktion aber mit revoke() zurück genommen wurde, 
@@ -1034,7 +1056,7 @@ var mulc = binaryc(mul);
 	
 		
 	</div>
-	<div class="Aufgabe" id="a1_14">
+	<div class="Aufgabehidden" id="a1_14">
 
 		<h3>Implementieren Sie ein "Array Wrapper"-Objekt mit den Methoden get, 
 		store und append, so dass ein Angreifer keinen 
@@ -1085,9 +1107,9 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_1">
+	<div class="Aufgabehidden" id="a2_1">
 
-		<h3>Make a function that makes a publish/subscribe object. 
+		<h3>Make a function that makes a publish/subscribe object.
 		It will reliably deliver all publications to all subscribers in the right order.<br>
 		my_pubsub = pubsub();<br>
 		my_pubsub.subscribe(alert);<br>
@@ -1129,7 +1151,7 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_2">
+	<div class="Aufgabehidden" id="a2_2">
 
 		<h3>Make a factory that makes functions that generate unique symbols.<br>
 		gensym = gensymf('G'); <br>
@@ -1169,7 +1191,7 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_3">
+	<div class="Aufgabehidden" id="a2_3">
 
 		<h3>Make a function that returns a function that will return the next fibonacci number.<br>
 			var fib = fibonaccif(0, 1);<br>
@@ -1216,7 +1238,7 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_4">
+	<div class="Aufgabehidden" id="a2_4">
 
 		<h3>Write a function that adds from many invocations, until it sees an empty invocation.<br>
 			addg(3)(4)(5)() // 12<br>
@@ -1256,7 +1278,7 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_5">
+	<div class="Aufgabehidden" id="a2_5">
 
 		<h3>Write a function that will take a binary function and apply it to many invocations.<br>
 			applyg(add)(3)(4)(5)() // 12<br>
@@ -1294,7 +1316,7 @@ var mulc = binaryc(mul);
 		
 
 </div>
-	<div class="Aufgabe" id="a2_6">
+	<div class="Aufgabehidden" id="a2_6">
 
 		<h3>Write a function m that takes a value and an optional source string and returns them in an object. <br>
 		JSON.stringify(m(1)) // {"value": 1, "source": "1"} <br>
@@ -1327,7 +1349,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(JSON.stringify(m(getInput2(),getInput3())))"> m(Input2,Input3)</button>	
 	
 	</div>
-	<div class="Aufgabe" id="a2_7">
+	<div class="Aufgabehidden" id="a2_7">
 
 		<h3>Write a function addm that takes two m objects and returns an m object.<br>
 			JSON.stringify(addm(m(3), m(4))) // {"value": 7, "source": "(3+4)"}   <br>
@@ -1348,7 +1370,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(JSON.stringify(addm(m(3), m(4))))"> addm(m(3), m(4))</button>	
 	<button onclick="simple_display_function(JSON.stringify(addm(m(getInput1int()), m(getInput2int()))))"> addm(m(Input1), m(Input2))</button>	
 	</div>
-	<div class="Aufgabe" id="a2_8">
+	<div class="Aufgabehidden" id="a2_8">
 
 		<h3>Write a function binarymf that takes a binary function and a string and returns a 
 			function that acts on m objects.<br>
@@ -1380,7 +1402,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(JSON.stringify(addm2(m(getInput1int()), m(getInput2int()))))"> addm2(m(Input1), m(Input2))</button>	
 	<button onclick="simple_display_function(JSON.stringify(mulm2(m(getInput1int()), m(getInput2int()))))"> addm2(m(Input1), m(Input2))</button>	
 	</div>
-	<div class="Aufgabe" id="a2_9">
+	<div class="Aufgabehidden" id="a2_9">
 
 		<h3>Modify function binarymf so that the functions it produces <br>
 		can accept arguments that are either numbers or m objects.<br>
@@ -1423,7 +1445,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(JSON.stringify(addm3(m(getInput1int()), m(getInput2int()))))"> addm3(m(Input1), m(Input2))</button>	
 	<button onclick="simple_display_function(JSON.stringify(mulm3(getInput1int(), getInput2int())))"> mulm3(Input1, Input2)</button>	
 	</div>
-	<div class="Aufgabe" id="a2_10">
+	<div class="Aufgabehidden" id="a2_10">
 
 		<h3>Write function unarymf, which is like binarymf except that it acts on unary functions.<br>
 			squarem = unarymf(square, "square");<br>
@@ -1462,7 +1484,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(JSON.stringify(doublem(getInput1int())))"> doublem(m(Input1))</button>
 	
 	</div>
-	<div class="Aufgabe" id="a2_11">
+	<div class="Aufgabehidden" id="a2_11">
 
 		<h3>Write a function that takes the lengths of two sides of a 
 		triangle and computes the length of the hypotenuse. 
@@ -1486,7 +1508,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(hyp(getInput1(), getInput2()))"> hyp(Input1, Input2)</button>	
 	
 	</div>
-	<div class="Aufgabe" id="a2_12">
+	<div class="Aufgabehidden" id="a2_12">
 
 		<h3>Write a function that evaluates array expressions.<br>
 			hypa = [ Math.sqrt, [ add, [mul, 3, 3], [mul, 4, 4] ] ];<br>
@@ -1521,7 +1543,7 @@ var mulc = binaryc(mul);
 	<button onclick="simple_display_function(exp([ Math.sqrt, [ add, [square, getInput1int()], [square, getInput2int()] ] ]))"> exp([ Math.sqrt, [ add, [square, Input1], [square, Input2] ] ])</button>	
 	
 	</div>
-	<div class="Aufgabe" id="a2_13">
+	<div class="Aufgabehidden" id="a2_13">
 
 		<h3>Make a function that stores a value in a variable. <br>
 			var variable; <br>
@@ -1547,7 +1569,7 @@ var mulc = binaryc(mul);
 	
 	<button onclick="simple_display_function(variable) "> show Value</button>	
 	</div>
-	<div class="Aufgabe" id="a2_14">
+	<div class="Aufgabehidden" id="a2_14">
 
 		<h3>Make a function that takes a binary function, two functions that provide operands, and a function that takes the result.
 			quatre( add, identityf(3), identityf(4), store ); // variable === 7 
@@ -1575,7 +1597,7 @@ var mulc = binaryc(mul);
 	
 	
 	</div>
-	<div class="Aufgabe" id="a2_15">
+	<div class="Aufgabehidden" id="a2_15">
 
 		<h3>Make a function that takes a unary function, 
 			and returns a function that takes an argument and a callback. <br>
@@ -1612,7 +1634,7 @@ var mulc = binaryc(mul);
 	
 	
 	</div>
-	<div class="Aufgabe" id="a2_16">
+	<div class="Aufgabehidden" id="a2_16">
 
 		<h3>Make a function that takes a binary function, and returns a  
 			function that takes two arguments and a callback.<br>
@@ -1647,6 +1669,7 @@ var mulc = binaryc(mul);
 	
 	</div>
 	
+	
 </div>
 <div class="ConsoleContainer">
 <div>
@@ -1666,9 +1689,6 @@ var mulc = binaryc(mul);
 <div id="Console"> </div>
 </div>
 </div>
-
 </body>
-
-
 </html>
 
