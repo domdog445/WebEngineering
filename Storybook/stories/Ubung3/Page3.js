@@ -1,11 +1,21 @@
-<html lang="de">
-<head>
-    <link rel="icon" href="../Ressource/favicon.svg" sizes="any" type="image/svg+xml">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+export const createPage3 = ({
+	title = "xxx",
+	subtitle = "The man who saved a billion lives",
+}) => {
+  const article = document.createElement('article');
+
+  const section = `
+
+   
 	<title> JavaScript</title>
 	<style>
 	#console {
+		background-color: #000000;
+		color: #00FF00;
+		height: auto;
+		min-height: 20em;
+	}
+	.console {
 		background-color: #000000;
 		color: #00FF00;
 		height: auto;
@@ -54,7 +64,7 @@
 	display: inline-block;
 	}
 
-	body
+	.GridContainer
 	{
 		display: grid;
 		grid-template-columns:1fr auto;
@@ -97,7 +107,7 @@
 
 	</style>
 	
-</head>
+
 
 <script>
 //Webseiten Funktionen
@@ -634,7 +644,7 @@ var mulc = binaryc(mul);
 
 
 <script>
-	var currentView = null;
+	currentView = null;
 	function viewAufgabe(i)
 	{
 		if(currentView === null)
@@ -651,7 +661,7 @@ var mulc = binaryc(mul);
 	}
 </script>
 
-<body>
+<div class="GridContainer">
 <div class="NavButtons">
 <div>
 <Button onclick="viewAufgabe('0')"> Erklärung</button>
@@ -1702,9 +1712,17 @@ var mulc = binaryc(mul);
 </div>
 <div>
 <h1> Console </h1>
-<div id="Console"> </div>
+<div id="Console" class="console"> </div>
 </div>
 </div>
-</body>
-</html>
+</GridContainer>
 
+
+
+
+`;
+
+  article.insertAdjacentHTML('beforeend', section);
+
+  return section;
+};
