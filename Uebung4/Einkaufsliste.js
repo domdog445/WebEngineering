@@ -31,7 +31,7 @@ function addEntry()
 	
 	let li = document.createElement('li');
 	li.id = "Entry" + actualEntry;
-	li.innerHTML = AddEntryInput.value + `
+	li.innerHTML =  `
 		<button id="Del`+actualEntry+`">
 			Delete
 		</button>
@@ -40,8 +40,8 @@ function addEntry()
 		</button>
 		<button id="Down`+actualEntry+`">
 			&#8659;
-		</button>
-	`;
+		</button> `+AddEntryInput.value
+	;
 	
 
 	

@@ -1,6 +1,4 @@
 export const createPage3 = ({
-	title = "xxx",
-	subtitle = "The man who saved a billion lives",
 }) => {
   const article = document.createElement('article');
 
@@ -234,11 +232,12 @@ function curry(f,x)
   }
 
 }
-
-const inc1 = addf(1);
-const inc2 = applyf(add)(1)
-const inc3 = curry(add,1)
-
+if(typeof inc1 !== 'undefined')
+{
+	const inc1 = addf(1);
+	const inc2 = applyf(add)(1)
+	const inc3 = curry(add,1)
+}
 ////////////////////////////
 
 function methodize(f)
@@ -826,6 +825,8 @@ var mulc = binaryc(mul);
 		der inc()-Implementierung zu schreiben?</h3>
 		<pre>
 			<code class="language-javascript">
+
+			
 
 	const inc1 = addf(1);
 	const inc2 = applyf(add)(1)
