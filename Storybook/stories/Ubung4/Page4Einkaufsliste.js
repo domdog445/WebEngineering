@@ -7,7 +7,6 @@ export const createPage4EL = ({
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Einkaufsliste</title>
-  
 </head>
 
 <!-- Struktur der Webseite-->
@@ -17,7 +16,7 @@ export const createPage4EL = ({
   <label for="fname">Enter a new item</label>
   <input type="text" id="newEntryInput" name="newEntry" value="">
   <button id="newEntryButton">Add item</button>
-  
+
 <ul id="Einkaufsliste">
 </ul>  
 

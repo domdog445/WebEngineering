@@ -31,7 +31,7 @@ export const createPage4TC = ({
 </div> 
 
 
-	<script src="/Tabellencalc.js"></script> 
+	<script src="/U4/Tabellencalc.js"></script> 
 	
 		<h3> Funktionen:</h3>
 	<table class="infotable">

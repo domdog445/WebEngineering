@@ -26,7 +26,7 @@ export const createPage4RL = ({
   
   
 
-	<script src="/Rednerliste.js"></script> 
+	<script src="/U4/Rednerliste.js"></script> 
 </body>
 
 
