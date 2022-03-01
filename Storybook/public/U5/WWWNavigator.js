@@ -106,7 +106,7 @@ right = document.getElementById("right");
 
 
 
-get("http://www2.inf.h-brs.de/~dzens2s/Uebung5/NavigatorContents.json").then(function(json)
+get("/U5/NavigatorContents.json").then(function(json)
 {
 	obj = JSON.parse(json);
 	keys = Object.keys(obj);
