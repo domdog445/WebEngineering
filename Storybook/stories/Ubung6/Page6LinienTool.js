@@ -15,7 +15,7 @@ export const createPage6Linien = ({
 </head>
 
 <body id="body">
-<h1>Achtung diese Story funktioniert in Storybook leider nur unter Chrome und benötigt einen direkten Reload auf dieser Seite. Bei der Verwendung von Firefox, muss die Webseite direkt aufgerufen werden (<a href=https://www.google.de>Hier</a>)</h1>
+<h1>Achtung diese Story funktioniert in Storybook leider nur unter Chrome und benötigt einen direkten Reload auf dieser Seite. Bei der Verwendung von Firefox, muss die Webseite direkt aufgerufen werden (<a href="/U6/LinienTool.html">Hier</a>)</h1>
 <h3>Diese Version des Kalligraphies Editors, ist während der Übung entstanden. Diese funktioniert mithilfe von path und nicht mithilfe von polygon</h3>
 	<div>
 	<svg xmlns="http://www.w3.org/2000/svg"

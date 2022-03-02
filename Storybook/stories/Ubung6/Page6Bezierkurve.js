@@ -121,7 +121,7 @@ export const createPage6Bezier = ({
 
 
   <body id="body">
-  <h1>Achtung diese Story funktioniert in Storybook leider nur unter Chrome und benötigt einen direkten Reload auf dieser Seite. Bei der Verwendung von Firefox, muss die Webseite direkt aufgerufen werden (<a href=https://www.google.de>Hier</a>)</h1>
+  <h1>Achtung diese Story funktioniert in Storybook leider nur unter Chrome und benötigt einen direkten Reload auf dieser Seite. Bei der Verwendung von Firefox, muss die Webseite direkt aufgerufen werden (<a href="/U6/BezierKurven.html">Hier</a>)</h1>
 	  <div>
 	  <svg xmlns="http://www.w3.org/2000/svg"
 		  viewBox="0 0 1000 600"
