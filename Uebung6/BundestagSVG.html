@@ -6,6 +6,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+<style>
+
+.tooltip {
+  background-color: yellow;
+  padding: 20px;
+  display: none;
+  border: 1px solid black;
+}
+  
+rect:hover + .tooltip {
+  display: block;
+}
+
+rect:hover {
+	z-index: 2;
+}
+</style>
+
 <body id="body">
 	<div id="svgDiv">
 	
@@ -78,6 +96,13 @@ function addRect(x,y,width,height,color)
 	return rect;	
 	
 }
+function AddGroup()
+{
+	let g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+	return g;	
+	
+}
+
 
 function addText(displayText,x,y,size,color,opacity)
 {
@@ -129,6 +154,7 @@ function createBackground(svg,sizex,sizey)
 	//Create Background Rect
 	let background = addRect(0,0,sizex,sizey,"#DDDDDD");
 	svg.appendChild(background);
+	
 
 	//Vertikale Linien
 	for(var i = 150; i < sizex-50;i+=50)
@@ -167,12 +193,35 @@ get("http://www2.inf.h-brs.de/~dzens2s/Uebung6/Bundestagverteilung.json").then(f
 	createBackground(svg,( maxPartei.Sitze+150),((Parteien.length *30)+20))
 	
 	
-	
+	let infoposX = 200
+	let infoposY = Parteien.length*30-60
+
 	//Für jede Partei
 	for(var i = 0; i < Parteien.length;i++)
 	{
 		let rect = addRect(100,(i*30)+5,Parteien[i].Sitze,20,Parteien[i].Farbe);
 		svg.appendChild(rect);
+
+		//ToolTip Creation
+		let infoRect = addRect(infoposX,infoposY,150,60,"#CCCCCC");
+
+		let group = AddGroup();
+		group.classList.add("tooltip");
+		group.appendChild(infoRect);
+		
+
+		let infoTXTName = addText("Name: " + Parteien[i].name,infoposX+10,infoposY+15,15,"#000000");
+		group.appendChild(infoTXTName);
+
+		infoTXTName = addText("Plätze: " + Parteien[i].Sitze,infoposX+10,infoposY+30,15,"#000000");
+		group.appendChild(infoTXTName);
+
+		infoTXTName = addText("Farbe:   " + Parteien[i].Farbe,infoposX+10,infoposY+45,15,"#000000");
+		group.appendChild(infoTXTName);
+
+		svg.appendChild(group)
+
+
 		console.log(Parteien[i].name);
 		
 		
