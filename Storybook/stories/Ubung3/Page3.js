@@ -3,7 +3,8 @@ export const createPage3 = ({
   const article = document.createElement('article');
 
   const section = `
-
+  <script src="/Style/prism.js"></script>
+  <link rel="stylesheet" href="/Style/prism.css">
    
 	<title> JavaScript</title>
 	<style>
