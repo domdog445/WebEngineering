@@ -7,7 +7,7 @@ export const createPage6createFiles = ({
   <script src="/Style/prism.js"></script>
   <link rel="stylesheet" href="/Style/prism.css">
   <p>In dieser Aufgabe sollten zwei Node Kommandozeilen-Tools entwickelt werden. Die erste Anwendung soll eine Datei erstellen welche mit Zahlen gefühlt ist. Die andere Erstellt eine Datei welche mit Buchstaben gefühlt ist. Die Anzahl der Zeilen können als Parameter übergeben werden </p>
-  
+  <link rel="stylesheet" href="/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code des Buchstaben Genereator (alpha_file_gen.mjs)</summary>

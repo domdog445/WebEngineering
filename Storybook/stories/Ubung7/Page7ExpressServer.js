@@ -7,7 +7,7 @@ export const createPage6Express = ({
   <script src="/Style/prism.js"></script>
   <link rel="stylesheet" href="/Style/prism.css">
   <p>In dieser Aufgabe sollte ein Express-Server aufgesetzt werden, welcher die Tool der vorherigen beiden Aufgaben zur Verfügung stellt. </p>
-  
+  <link rel="stylesheet" href="/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code des Express Servers (ExpressMerge.js)</summary>

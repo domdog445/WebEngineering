@@ -1,0 +1,15 @@
+
+details>p {
+	padding: 0px 50px 0px 5px;
+	background: #EEEEEE;
+	margin: 5px 0px 5px 0px;
+}
+details {
+	background: #DDDDDD;
+	margin: 5px;
+}
+
+summary { 
+	font-size: 18px;
+	font-weight: bold; }
+
