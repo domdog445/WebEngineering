@@ -49,7 +49,7 @@
 		grid-template-columns: 20% 60% 20%;
 	}
 	
-	body {
+	.content {
 		border-radius: 3px 15px 5px 30px;
 		
 	}
@@ -64,7 +64,7 @@
 		
 	}
 	
-	html, body
+	html, body, .content
 	{
 	margin: 0;
 	padding: 0;
@@ -117,50 +117,74 @@
 </head>
 
 <body>
-	<!--Header-->
-	<div id="header" class="boxx"> <div class="contentText">Header</div><br>
-	<button class="headerbutton">Home</button> 
-	<button class="headerbutton">News</button> 
-	<button class="headerbutton">Content</button> 
-	<button class="headerbutton">About</button> 
-	</div>
-	
-	<div id="mainScroll">
-	
-		<!--Left-->
-		<div id="menu" class="boxx" > 
-			<div class="contentText">
-				left <br>
-				menu <br>
-				with <br>
-				many <br>
-				items <br>
+
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
 			</div>
+	</header>
+	<div class="content">
+		<!--Header-->
+		<div id="header" class="boxx"> <div class="contentText">Header</div><br>
+		<button class="headerbutton">Home</button> 
+		<button class="headerbutton">News</button> 
+		<button class="headerbutton">Content</button> 
+		<button class="headerbutton">About</button> 
 		</div>
 		
-		<!--Content-->
-		<div id="content" class="boxx"> <div class="contentText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-		Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
-		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
-		At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
-		Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita   </div></div>
+		<div id="mainScroll">
 		
-		<!--Right-->
-		<div id="right" class="boxx"> 
-			<div class="contentText">
-				right
+			<!--Left-->
+			<div id="menu" class="boxx" > 
+				<div class="contentText">
+					left <br>
+					menu <br>
+					with <br>
+					many <br>
+					items <br>
+				</div>
+			</div>
+			
+			<!--Content-->
+			<div id="content" class="boxx"> <div class="contentText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+			Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+			Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+			Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+			At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
+			Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita   </div></div>
+			
+			<!--Right-->
+			<div id="right" class="boxx"> 
+				<div class="contentText">
+					right
+				</div>
 			</div>
 		</div>
+		<!--Footer-->
+		<div id="footer" class="boxx"> <div class="contentText">Footer: 
+			<a href="">Sitemap</a>
+			<a href="">Home</a>
+			<a href="">News</a>
+			<a href="">Contact</a>
+			<a href="">About</a>
+			</div>
+		</div> 
 	</div>
-	<!--Footer-->
-	<div id="footer" class="boxx"> <div class="contentText">Footer: 
-		<a href="">Sitemap</a>
-		<a href="">Home</a>
-		<a href="">News</a>
-		<a href="">Contact</a>
-		<a href="">About</a>
-		</div></div> 
 </body>
 
 

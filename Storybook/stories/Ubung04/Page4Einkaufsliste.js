@@ -65,13 +65,13 @@ AddEntryInput.addEventListener('keypress', function (e) {
 //nötige Funktionen
 
 function DeleteEntry(obj) {
-	console.log("Dele")
+	
   Container.removeChild(obj);
  }
  
 function addEntry()
 {
-	console.log("ADD")
+	
 	if(AddEntryInput.value.length===0)
 		return;
 	
@@ -114,7 +114,6 @@ function addEntry()
  
  //Zusätzliche Funktionen für mehr Funktionalität
 function Up(obj) {
-	console.log("UP")
   
   //Die Objekte beschaffen
   const frag = document.createDocumentFragment();
@@ -122,13 +121,6 @@ function Up(obj) {
   var items = list.querySelectorAll("li");
   var itemsArr = Array.from(items)
   var arrPos = itemsArr.indexOf(obj);
-
-  console.log(frag)
-  console.log(list)
-  console.log(items)
-  console.log(itemsArr)
-  console.log(arrPos)
-  console.log(obj)
   
   if(arrPos <= 0)
 	  return
@@ -146,7 +138,7 @@ function Up(obj) {
 }
 
 function Down(obj) {
-	console.log("Down")
+
   //Die Objekte beschaffen
   const frag = document.createDocumentFragment();
   var list = document.getElementById('Einkaufsliste');
@@ -154,12 +146,6 @@ function Down(obj) {
   var itemsArr = Array.from(items)
   var arrPos = itemsArr.indexOf(obj);
   
-  console.log(frag)
-  console.log(list)
-  console.log(items)
-  console.log(itemsArr)
-  console.log(arrPos)
-  console.log(obj)
 
   if(arrPos >= itemsArr.length-1)
 	  return

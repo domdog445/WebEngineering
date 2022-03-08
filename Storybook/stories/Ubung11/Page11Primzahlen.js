@@ -10,10 +10,10 @@ export const createPage11Primzahlen = ({
     }
     
   </style>
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe wurde eine Funktion für die Berechnung von der Anzahl von Primzahlen entwickelt (In den Zahlen bis 100.000 sind es 9592 Primzahlen). DIese wurde sowohl in C als auch in JavaScript implementiert. Aus der C Datei wurde anschließend eine WASM und eine WAT Datei konvertiert </p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code CalcPrim.c</summary>
@@ -267,14 +267,10 @@ export const createPage11Primzahlen = ({
 				return true;
 			}
 
-			console.time("CalcPrim")
 			for(var i= 2; i<100000 ;i++)
 			{
 				testPrim(i);
 			}
-			console.timeEnd("CalcPrim")
-			console.log(prims.length);
-			console.log(prims);
 
 			 
 		  </code>
@@ -401,19 +397,17 @@ export const createPage11Primzahlen = ({
 	  MessungJS[3].push(TimeTestFunction(testprimsJS,10000))
 	  MessungJS[4].push(TimeTestFunction(testprimsJS,100000))
   }
-  console.log(MessungJS);
   
   </script>
   
   <script>
   
   var MessungWASM = [[],[],[],[],[]];
-  fetch('/U11/CalcPrimZahlen.wasm').then(response =>
+  fetch('/~dzens2s/Storybook/U11/CalcPrimZahlen.wasm').then(response =>
 	response.arrayBuffer()
   ).then(bytes =>
 	WebAssembly.instantiate(bytes,{})
   ).then(wasmInstance => {
-	  console.time("CalcPrim-WASM")
 	  const {testPrims} = wasmInstance.instance.exports;
   
 	  for(var i = 0; i <10;i++)

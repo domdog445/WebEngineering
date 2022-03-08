@@ -137,8 +137,8 @@ export const createPage8WWWNavigator = ({
 
 </head>
 
-<script type="module" src="/U8/WebComponentMenuComponent.js"></script>
-<script type="module" src="/U8/WebComponentDisplayComponent.js"></script>
+<script type="module" src="/~dzens2s/Storybook/U8/WebComponentMenuComponent.js"></script>
+<script type="module" src="/~dzens2s/Storybook/U8/WebComponentDisplayComponent.js"></script>
 <body>
 	
 		<div id="header" class="boxx"> <div class="contentText">Header</div><br>
@@ -177,7 +177,7 @@ export const createPage8WWWNavigator = ({
 	
 	
 <script>
-	fetch("/U8/NavigatorContents.json").then(response => response.json())
+	fetch("/~dzens2s/Storybook/U8/NavigatorContents.json").then(response => response.json())
 		.then(data => {
 			var headmenu = document.getElementById("headerMenu");
 			var LeftDisplay = document.getElementById("LeftDisplay");
@@ -239,8 +239,6 @@ export const createPage8WWWNavigator = ({
 
 			}
 
-
-			console.log(data);
 			})
 		;;
 

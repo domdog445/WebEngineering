@@ -6,24 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> 2.4 Responsiv mit Grid</title>
 	<style>
-	header {background-color: #363636;
+	.pheader {background-color: #363636;
 			height: 70px;
 			text-align: center;
 			font-family: Helvetica, sans-serif,Arial;
 			grid-area: Header;
 			}
-	body {background-color: #EBEAE6;
-			grid-area: Body;}
+	.content {background-color: #EBEAE6;
+			grid-area: Content;}
 	footer {background-color: #061825;
 			color: white;
 			text-align: center;
 			padding: 80px;
 			grid-area: Footer;			
 			}
-	img {border: solid 2px black;
-		width: 50%;
-		height: 50%;
-		align: center;}
 	h1 {text-align: center}
 	.Buybutton{font-size: 20px;
 		background-color: #EA934B;
@@ -47,7 +43,7 @@
 	
 
 	
-	.content{
+	.pcontent{
 		width: 100%;
 		display: grid;
 		grid-template-areas: "Title Title"
@@ -55,7 +51,7 @@
 		grid-template-rows: 70px 80%;
 		grid-template-columns: 50% 50%;
 	}
-	body{
+	.content{
 		width: 100%;
 		display: grid;
 		grid-template-areas: "Header"
@@ -70,6 +66,7 @@
 		width: auto;
 		height: 100%;
 		max-height: 600px;
+		border: solid 2px black;
  	}
 	.imageBox{
 		grid-area: image;
@@ -89,7 +86,7 @@
 	
 	/*Allgemein*/
 	
-	html, body
+	html, body, .content
 	{
 		margin: 0;
 		padding: 0;
@@ -99,7 +96,7 @@
 
 	/*Tablet*/
 	@media (max-width: 800px) {
-		.content{
+		.pcontent{
 			width: 100%;
 		
 			display: grid;
@@ -117,14 +114,14 @@
 		}
 	}
 	
-	/*Tablet*/
+	/*Phone*/
 	@media (max-width: 550px) {
-		header{
+		.pheader{
 		display:grid;
 			grid-template-rows: 70px 70px 70px 70px;
 		}
 		
-		body{
+		.pcontent{
 			grid-template-rows: 280px auto 500px;	
 		}
 		
@@ -138,37 +135,60 @@
 
 
 <body>
-
-	<header>
-		<button class="HeadButtons" type="button">The book series</button> 
-		<button class="HeadButtons" type="button">Testimonials</button> 
-		<button class="HeadButtons" type="button">The Author</button> 
-		<button class="HeadButtons" type="button">Free resource</button> 
-	</header>
-
+	
+<script src="../Headerscript.js" async></script>
+<link rel="stylesheet" href="../mystyle.css">
+<header id="Header">
+	<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+	<div class="NavContainer">
+		<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+		<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+		<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+		<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+		<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+		<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+		<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+		<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+		<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+		<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+		<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+		<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+		<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+		<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+</header>
 	<div class="content">
-		<div class="Title"><h1> You dont know JavaScript </h1></div>
-		
-		
-		<div class="imageBox">
-			<img class="image" src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png"/>
+		<div class="pheader">
+			<button class="HeadButtons" type="button">The book series</button> 
+			<button class="HeadButtons" type="button">Testimonials</button> 
+			<button class="HeadButtons" type="button">The Author</button> 
+			<button class="HeadButtons" type="button">Free resource</button> 
 		</div>
-		<div class="text">
-			<p>Don't just drift through Javascript </p>
-			<p>Understand how Javascript works</p>
-			<p>Start your journey through the bumpy side of Javascript</p>
-							
-			 <button class="Buybutton" type="button">ORDER YOUR COPY NOW </button>
 
+		<div class="pcontent">
+			<div class="Title"><h1> You dont know JavaScript </h1></div>
+			
+			
+			<div class="imageBox">
+				<img class="image pimg" src="https://kaul.inf.h-brs.de/wem/assets/img/landing-img.png"/>
+			</div>
+			<div class="text">
+				<p>Don't just drift through Javascript </p>
+				<p>Understand how Javascript works</p>
+				<p>Start your journey through the bumpy side of Javascript</p>
+								
+				<button class="Buybutton" type="button">ORDER YOUR COPY NOW </button>
+
+			</div>
 		</div>
+		<footer>
+		The first ebook in the book series is absolutely free. <br>
+		<br>
+		<button class="Buybutton" type="button">FIND OUT MORE ABOUT THIS OFFER</button> 
+
+
+		</footer>
 	</div>
-	<footer>
-	The first ebook in the book series is absolutely free. <br>
-	<br>
-	 <button class="Buybutton" type="button">FIND OUT MORE ABOUT THIS OFFER</button> 
-
-
-	</footer>
 </body>
 
 

@@ -25,13 +25,13 @@
 	#primzahlen {
 		overflow-y: scroll;
 	}
-	body{
+	.content{
 		display: grid;
 		grid-template-rows:4em 1fr;
 	}
 	
 	html, 
-	body {
+	body,content {
 		height: 100%;
 		margin: 0;
 		padding: 0;
@@ -42,11 +42,35 @@
 </style>
 
 
-<body>
-<div id="container">
-	<div id="animate"> </div>
-</div>
-<div id="primzahlen"> </div>
+<body style="background-color:var(--background-color)">
+	
+	<script src="../Headerscript.js" async></script>
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+	</header>
+	<div class="content" style="padding: var(--margin-content)">
+		<div id="container">
+			<div id="animate"> </div>
+		</div>
+		<div id="primzahlen"> </div>
+	</div>
 </body>
 
 

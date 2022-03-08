@@ -3,7 +3,7 @@ import {createPage6MergeFiles} from './Page7Merge'
 import {createPage6Express} from './Page7ExpressServer'
 
 export default {
-  title: 'Lösungen der Übungen/Übung 07',
+  title: 'Lösungen der Übungen/Übung 07 Node & npm & Deno',
   argTypes: {},
 };
 

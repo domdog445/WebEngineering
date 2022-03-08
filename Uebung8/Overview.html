@@ -8,21 +8,68 @@
 <script type="module" src="WebComponentBundestag.js"></script>
 <script type="module" src="WebComponentTabellenCalc.js"></script>
 <script type="module" src="WebComponentRednerliste.js"></script>
+<script type="module" src="WebComponentEinkaufsliste.js"></script>
 <script type="module" src="WebComponentBezier.js"></script>
 <script type="module" src="WebComponentKaligraphie.js"></script>
 <script type="module" src="WebComponentMenuComponent.js"></script>
-<body>
+<script type="module" src="WebComponentTabellenCalc.js"></script>
+<body style="background-color:#D4F0D0">
+	<script src="../Headerscript.js" async></script>
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+			</div>
+	</header>
+	<div class="content"> 
+		<center>
+			<h1>Auf dieser Webseite sind mehrere Webkomponenten </h1>
+			<h3>Einkaufsliste als Webkomponente</h3>
+			<shopping-list></shopping-list>
 
-	<div>
-		<simple-menucomponent></simple-menucomponent>
+			<h3>Rednerliste als Webkomponente</h3>
+			<redner-list></redner-list>
+
+			<h3>Tabellenkalkulation als Webkomponente</h3>
+			<tabellen-calc></tabellen-calc>
+
+			<h3>Balkendiagramm der Bundestagverteilung als Webkomponente</h3>
+			<simple-bundestag></simple-bundestag>
+
+			<h3>Menü Komponente als Webkomponente</h3>
+			<div>
+				<simple-menucomponent></simple-menucomponent>
+			</div>
+
+			<h3> Kaligraphie Editor als Webkomponente</h3>
+			<simple-kaligraphie sizeWidth="1000px"></simple-kaligraphie>
+			
+
+			<h3> Linien Editor als Webkomponente</h3>
+			<simple-kaligraphie linemode="true" sizeWidth="1000px"></simple-kaligraphie>
+
+			<h3>Bezierkurve als Webkomponente</h3>
+			<bezier-kurve></bezier-kurve>
+
+
+			<br>
+			<a href="./WWWNavigator.html" class="link" style="margin-left: auto;">Hier geht es zum WWW-Navigator aus Webkomponenten</a>
+		</center>
 	</div>
-	<simple-kaligraphie linemode="true" sizeWidth="1000px"></simple-kaligraphie>
-	<simple-kaligraphie sizeWidth="1000px"></simple-kaligraphie>
-	<bezier-kurve></bezier-kurve>
-	<simple-bundestag></simple-bundestag>
-	<redner-list></redner-list>
-
-	<tabellen-calc sizeY="10"></tabellen-calc>
 </body>
 
 

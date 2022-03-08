@@ -4,12 +4,754 @@
 	<title> Domenic Overview 7</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		li{
+			margin: 20px;
+		}
+	</style>
 </head>
 
-<body>
+<body  style="background-color:#D4F0D0;">
+
+<link rel="stylesheet" href="../mystyle.css">
+<header id="Header">
+	<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+	<div class="NavContainer">
+		<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+		<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+		<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+		<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+		<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+		<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+		<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+		<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+		<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+		<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+		<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+		<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+		<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+		<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+</header>
+	<div class="content">
+		<script src="../Ressource/Style/prism.js"></script>
+  <link rel="stylesheet" href="../Ressource/Style/prism.css">
+  <h1>In dieser Aufgabe sollten zwei Node Kommandozeilen-Tools entwickelt werden. Die erste Anwendung soll eine Datei erstellen welche mit Zahlen gefühlt ist. Die andere Erstellt eine Datei welche mit Buchstaben gefühlt ist. Die Anzahl der Zeilen können als Parameter übergeben werden </h1>
+  <link rel="stylesheet" href="../Ressource/Style/SummaryStyle.css">
+
+  <details>
+  <summary> Source Code des Buchstaben Genereator (alpha_file_gen.mjs)</summary>
+
+
+  <pre>
+		<code class="language-javascript">
+		import fs from "fs"
+		
+		
+		
+		
+		
+		export function genAlphaFile(amount,filename,callback)
+		{
+			
+			console.log("Create: " + amount +" lines");
+			if(filename === undefined)
+				filename = "output.txt";
+			
+			return new Promise((resolve, reject) => {
+			fs.writeFile(filename, createString(amount), function(err) {
+				if (err) {
+					reject(err);
+					return console.error(err);
+				}
+				console.log("Es wurde eine Datei '" + filename + "' mit " + amount+ " Zeilen erstellt.");
+				if(callback !== undefined)
+					callback();
+				resolve();
+			})
+			});
+		}
+		
+		function createString(amount)
+		{
+			amount = parseInt(amount);
+			var result = "";
+			for(var i=0; i < amount; i++)
+			{
+				result+= getChar(i) + "\r\n"
+			}
+			return result;
+		}
+		
+		function getChar(val)
+		{
+			if(val < 26)
+			{
+				return String.fromCharCode(65 + val);
+			}
+			else
+			{
+				return getChar(val/26-1) + getChar(val%26);
+			}
+		}
+		
+		</code>
+	</pre>
+	</details>
+	<a href="Alpha.txt">Beispieldatei mit 10000 Zeilen (Buchstaben)</a>
+	<br>
+	<br>
+	<details>
+	<summary> Source Code des Zahlen Genereator (number_file_gen.mjs)</summary>
+  
+  
+	<pre>
+		  <code class="language-javascript">
+		import http from 'http';
+		import fs from "fs"
+
+
+
+
+		export function genNumberFile(amount,filename,callback)
+		{
+			console.log("Create: " + amount +" lines");
+			if(filename === undefined)
+				filename = "output.txt";
+			
+			
+			
+			return new Promise((resolve, reject) => {
+				fs.writeFile(filename, createString(amount), function(err) {
+				if (err) {
+					reject();
+					return console.error(err);
+				}
+				console.log("Es wurde eine Datei '" + filename + "' mit " + amount+ " Zeilen erstellt.");
+				if(callback !== undefined)
+					callback();
+				resolve();
+			});
+			});
+		}
+		
+
+
+		  
+		  </code>
+	  </pre>
+	  </details>
+	  
+	<a href="number.txt">Beispieldatei mit 10000 Zeilen (Zahlen)</a>
+
+	<h1>In dieser Aufgabe sollten zwei Node Kommandozeilen-Tools entwickelt werden. Beide Tools, sollen hierbei die vorhin erstellten Dateien Zeilenweise mergen können. Das eine Tool funktioniert mithilfe von FS und das andere mithilfe von Streams </h1>
+  
+	<details>
+	<summary> Source Code des Merge Files (merge_files.mjs)</summary>
+  
+	<script src="../Headerscript.js" async></script>
+	<pre>
+		  <code class="language-javascript">
+		  import fs from "fs"
+  
+		  export function MergeFsFile(file1,file2,OutputName)
+		  {
+			  return new Promise((resolve, reject) => {
+				  Promise.all([getPromiseReadFile(file1), getPromiseReadFile(file2)])
+					  .then((values) => {
+					  fs.writeFile(OutputName, MergeStrings(values[0],values[1]), (err) => {
+						  if (err) 
+						  {
+							  reject(err);
+							  throw err;
+						  }
+						  
+						  console.log('Merge successfull');
+						  resolve();
+					  });
+						  
+				  });	  
+			  });
+				  
+			  
+		  }
+  
+		  export function getPromiseReadFile(filename)
+		  {
+			  return new Promise(function(resolve, reject) {
+				  fs.readFile(filename, "utf8", function(err, data){
+					  if (err) 
+						  reject(err); 
+					  else
+						  resolve(data);
+				  });
+			  });
+			  
+		  }
+  
+		  export function MergeStrings(String1,String2)
+		  {
+			  var allA = String1.split("\r\n");
+			  var allB = String2.split("\r\n");
+			  var result = "";			
+			  var i = 0;	
+			  while(i < allA.length || i < allB.length)
+			  {
+				  if(i < allA.length)
+				  {
+					  result += allA[i];
+				  }
+				  if(i < allB.length)
+				  {
+					  result += allB[i];
+				  }
+				  result += "\r\n";
+				  i++;
+			  }
+			  return result;
+		  }
+  
+		  
+		  </code>
+	  </pre>
+	  </details>
+	  <a href="./output.txt">Ergebnisdatei</a>
+	  <br>
+	  <br>
+	  <details>
+	  <summary> Source Code des Stream Mergers(merge_streams.mjs)</summary>
 	
-	Diese Seite ist leider derzeit nicht verfügbar. Bitte versuchen sie es zu einem späteren Zeitpunkt erneut.
 	
+	  <pre>
+			<code class="language-javascript">
+			import fs from "fs"
+			import { PassThrough } from 'stream'
+			import readline from 'readline';
+			import {pipeline } from 'stream/promises';
+			
+			
+			var	arr1 = [];
+			var	arr2 = [];
+			var finished1 = false;
+			var finished2 = false;
+			/*
+			if(process.argv.length >= 4)
+				FSReadFileStream([process.argv[2],process.argv[3],process.argv[4]])
+			else
+			{
+				console.log("node [filename1] [filename2] [OutputFile]");
+			}*/
+			
+			
+			export async function MergeFileStream(file1,file2,OutputName)
+			{
+				return new Promise(async(resolve, reject) => {
+					const ReadStream1 = fs.createReadStream(file1,"utf8");
+					const ReadStream2 = fs.createReadStream(file2,"utf8");
+					const WriteStream = fs.createWriteStream(OutputName);
+					
+					
+					await pipeline(ReadStream2,
+						async function(source)
+						{
+						source.setEncoding('utf8')
+							for await (const chunk of source)
+							{
+								arr1 = merge2ArraysPerLine(arr1,chunk.split("\r\n"));
+								MergeStrings(WriteStream);
+								WriteStream.write("-AA-");
+							}
+						}
+					);
+					await pipeline(ReadStream1,
+						async function(source)
+						{
+						source.setEncoding('utf8')
+							for await (const chunk of source)
+							{
+								arr2 = merge2ArraysPerLine(arr2,chunk.split("\r\n"));
+								await MergeStrings(WriteStream);
+								WriteStream.write("-BB-");
+							}
+						}
+					);
+					
+					
+					console.log("End");
+					WriteStream.end();
+					resolve();
+				
+				});
+				
+			}
+			
+			
+			function merge2ArraysPerLine(a1,a2)
+			{
+				var result = [];
+				if(a1.length >= 1)
+				{
+					
+					var tmp = a1.at[a1.length - 1] + a1[0];
+					
+					var tmps = tmp.split("\r\n");
+					
+					result = a1.slice(0, -1)
+					result.concat(tmps);
+					result.concat(a2.slice(0, -1));
+					return result;
+				}
+				else
+				{
+					return a2;
+				}
+				
+			}
+			
+			function getPromiseReadFile(filename)
+			{
+				return new Promise(function(resolve, reject) {
+					fs.readFile(filename, "utf8", function(err, data){
+						if (err) 
+							reject(err); 
+						else
+							resolve(data);
+					});
+				});
+				
+			}
+			
+			async function MergeStrings(WriteStream)
+			{
+				
+				while((arr1.length >1 || finished1) &&
+					  (arr2.length >1 || finished2) 
+				)
+				{
+					if (finished1 && finished2 && arr1.length ==0 && arr2.length == 0)
+						return;
+			
+				
+					var result = ""
+					if(arr1.length>0)
+					{
+						result += arr1[0];
+						arr1.splice(0, 1);
+					}
+					if(arr2.length>0)
+					{
+						result += arr2[0];
+						arr2.splice(0, 1);
+					}
+					result += "\r\n";
+						
+					WriteStream.write(result);
+					//console.log("A: " + result);
+				}
+				return result;
+			}
+			
+			</code>
+		</pre>
+		</details>
+		
+		<br>
+  <h4>Um diese beiden Tools zu vergleichen, wurde ein weiteres Skript geschrieben. Der Quellcode für die Zeitmessung ist unter denerhalb der Ergebnisse aufgezeigt</h4>
+  <br>
+  <style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+  .tg .tg-6ic8{border-color:inherit;font-weight:bold;text-align:right;vertical-align:top}
+  .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+  </style>
+  <table class="tg">
+  <thead>
+	<tr>
+	  <th class="tg-7btt">Zeilenanzahl</th>
+	  <th class="tg-7btt">Filesystem:</th>
+	  <th class="tg-7btt">Mergestream:</th>
+	</tr>
+  </thead>
+  <tbody>
+	<tr>
+	  <td class="tg-6ic8">2000000</td>
+	  <td class="tg-0pky">1,376s</td>
+	  <td class="tg-0pky">0,316s</td>
+	</tr>
+	<tr>
+	  <td class="tg-6ic8">1000000</td>
+	  <td class="tg-0pky">0,676s</td>
+	  <td class="tg-0pky">0,184s</td>
+	</tr>
+	<tr>
+	  <td class="tg-6ic8">10000</td>
+	  <td class="tg-0pky">0,009 074s</td>
+	  <td class="tg-0pky">0,069 575s</td>
+	</tr>
+	<tr>
+	  <td class="tg-6ic8">100</td>
+	  <td class="tg-0pky">0,007 506s</td>
+	  <td class="tg-0pky">0,007 287s</td>
+	</tr>
+  </tbody>
+  </table>
+  <br>
+  
+		<details>
+		<summary> Source Code für der Zeitmessung (timeMeassure.mjs)</summary>
+	  
+	  
+		<pre>
+			  <code class="language-javascript">
+			  import fs from "fs"
+			  import {MergeFileStream} from "./merge_streams.mjs"
+			  import {MergeFsFile} from "./merge_files.mjs"
+			  import {genAlphaFile} from "./alpha_file_gen.mjs"
+			  import {genNumberFile} from "./number_file_gen.mjs"
+			  
+			  
+			  var arr = [0,1,2,3,4]
+			  arr[arr.length - 1]=55
+			  console.log(arr.at(-1))
+			  let ready1 = false;
+			  let ready2 = false;
+			  
+			  
+			  test();
+			  
+			  
+			  
+			  
+			  
+			  async function genFiles()
+			  {
+				  console.time("Generate Files");
+				  await Promise.all([genNumberFile(20000,"inputNumb20000.txt"),
+									  genAlphaFile(20000,"inputAlph20000.txt"),
+									  genNumberFile(10,"inputNumb10.txt"),
+									  genAlphaFile(10,"inputAlph10.txt"),
+									  genNumberFile(1000,"inputNumb1000.txt"),
+									  genAlphaFile(1000,"inputAlph1000.txt"),
+									  genNumberFile(123456,"inputNumb123456.txt"),
+									  genAlphaFile(123456,"inputAlph123456.txt")]);
+				  console.timeEnd("Generate Files")
+			  
+			  }
+			  
+			  
+			  async function test()
+			  {
+				  console.time("Generate Files");
+				  await Promise.all([genNumberFile(10000 ,"input1.txt"),
+									  genAlphaFile(10000 ,"input2.txt")]);
+				  console.timeEnd("Generate Files")
+				  
+				  
+				  console.time("MergeFileStream");
+				  await MergeFileStream("input1.txt","input2.txt","outputstream.txt") 
+				  console.timeEnd("MergeFileStream")
+			  
+				  console.time("MergeFsFile");
+				  await MergeFsFile("input1.txt","input2.txt","outputfile.txt")
+				  console.timeEnd("MergeFsFile")
+			  }
+			
+	
+	
+			  
+			  </code>
+		  </pre>
+		  </details>
+
+	<h1>In dieser Aufgabe sollte ein Express-Server aufgesetzt werden, welcher die Tool der vorherigen beiden Aufgaben zur Verfügung stellt. </h1 >
+  
+	<details>
+	<summary> Source Code des Express Servers (ExpressMerge.js)</summary>
+  
+  
+	<pre>
+		  <code class="language-javascript">
+		  //Imports
+		  const fs = require('fs');
+		  const http = require('http');
+		  const https = require('https');
+  
+		  const merge_streams = require("./Moduls/merge_streams.js");
+		  const merge_files = require("./Moduls/merge_files.js");
+		  const alpha_file_gen = require("./Moduls/alpha_file_gen.js");
+		  const number_file_gen = require("./Moduls/number_file_gen.js");
+  
+  
+		  const outputfolder = "Public/Output/";
+		  const inputfolder = "Public/Input/";
+  
+		  //Express Const
+		  const express = require('express');
+		  const app = express();
+  
+		  const httpServer = http.createServer(app);
+  
+		  //Activate directly folder
+		  app.use('/static', express.static(__dirname + '/public'));
+  
+		  //Body Parser
+		  app.use(express.urlencoded({
+		  extended: true
+		  }))
+  
+  
+  
+		  // For http
+		  httpServer.listen(8080);
+  
+		  //Startseite
+		  app.get('/', function (req, res) {
+			  res.header('Content-type', 'text/html');
+			  return res.end(	\`&lt;h1> Willkommen beim Gen/Merge Tool &lt;/h1>
+				  &lt;a href="/genFiles">Hier geht es zum generieren von Dateien&lt;/a>'
+				  &lt;a href="/MergeFiles">Hier geht es zum konkatenieren der Dateien&lt;/a>'\`
+				  
+			  );
+			  
+		  });
+  
+		  //GenFiles
+		  app.get('/genFiles', function (req, res) {
+			  res.header('Content-type', 'text/html');
+			  return res.end(\`&lt;form method="POST" action="/createFile">
+					  &lt;h1>Generate Files&lt;/h1>
+					  &lt;a href="/"> back &lt;/a> &lt;br>
+				  
+				  
+				  &lt;label for="amountID"> Amount: &lt;/label> &lt;/div>
+				  &lt;input id="amountID" type="text" name="amount" />
+				  
+				  
+				  
+				  &lt;/style>
+				  &lt;outerBox>
+				  &lt;fieldset>
+				  &lt;legend>GenerateType&lt;/legend> &lt;div>
+					  &lt;input type="radio" id="numbCreate" name="GenerationType" value="numb">
+					  &lt;label for="numbCreate"> Numbers&lt;/label> &lt;/div>&lt;div>
+					  &lt;input type="radio" id="alphCreate" name="GenerationType" value="alph">
+					  &lt;label for="alphCreate"> Alphabatic&lt;/label> &lt;/div>
+				  &lt;/fieldset>
+				  &lt;/outerBox>
+				  
+				  &lt;input type="submit" />
+				  &lt;/form>
+				  &lt;style>
+					  fieldset {
+						  display: flex;
+						  flex-direction: column;
+					  }
+					  outerBox {
+						  display: flex;
+						  flex-direction: row;
+					  }
+				  \`
+			  );
+			  
+		  });
+  
+		  //MergeFiles
+		  app.get('/MergeFiles', function (req, res) {
+			  res.header('Content-type', 'text/html');
+			  
+			  var result = \`&lt;form method="POST" action="/MergeFiles">
+				  &lt;h1>Merge follow Files&lt;/h1>
+				  &lt;a href="/"> back &lt;/a>&lt;br>
+				  &lt;style>
+					  fieldset {
+						  display: flex;
+						  flex-direction: column;
+					  }
+					  outerBox {
+						  display: flex;
+						  flex-direction: row;
+					  }
+				  
+				  &lt;/style>
+				  &lt;outerBox>
+				  &lt;fieldset>
+				  &lt;legend>File1&lt;/legend>\`
+			  
+			  
+			  
+  
+			  fs.readdir(inputfolder, (err, files) => {
+				  files.forEach(file => {
+					  result +=\`&lt;div>&lt;input type="radio" id="file1`+ '$' + `{file}" name="file1" value="`+ '$' + `{file}">
+					  &lt;label for="file1`+ '$' + `{file}"> `+ '$' + `{file}&lt;/label> &lt;/div>\`
+					  
+				  });
+				  result+= "&lt;/fieldset>&lt;fieldset>&lt;legend>File2&lt;/legend>"
+				  
+				  fs.readdir(inputfolder, (err, files) => {
+					  files.forEach(file => {
+						  result +=\`&lt;div>&lt;input type="radio" id="file2`+ '$' + `{file}" name="file2" value="`+ '$' + `{file}">
+						  &lt;label for="file2`+ '$' + `{file}"> `+ '$' + `{file}&lt;/label>&lt;/div> \`
+						  
+					  });
+					  
+					  
+					  
+					  
+					  result +=  \`&lt;/fieldset> &lt;/outerBox>
+					  &lt;input type="submit" />
+					  &lt;/form>\`;
+					  return res.end(result);
+					  
+				  })
+			  
+			  
+				  
+				  
+				  
+				  
+				  
+			  })
+			  
+		  });
+  
+  
+		  //Post CreateFile
+		  app.post('/createFile', (req, res) => {
+			  const amount = req.body.amount;
+			  const genType = req.body.GenerationType;
+			  var outputPath = inputfolder+genType+amount+".txt";
+			  
+			  console.log(amount);
+			  console.log(genType);
+			  
+			  if(isNaN(amount))
+			  {
+				  res.end(amount + " ist keine gültige Zahl");
+				  return;	
+			  }
+			  
+			  if(genType === "numb")
+				  genFile(amount,outputPath,res,number_file_gen.gen);
+			  else if(genType === "alph")
+				  genFile(amount,outputPath,res,alpha_file_gen.gen);
+			  else
+				  res.end(genType + " ist nicht 'alph' oder 'numb'");
+		  })
+  
+  
+		  app.post('/MergeFiles', (req, res) => {
+			  const file1 = req.body.file1;
+			  const file2 = req.body.file2;
+			  
+			  console.log(file1);
+			  console.log(file2);
+			  
+			  const file1Path = inputfolder + file1;
+			  const file2Path = inputfolder + file2;
+			  
+			  var outputPath = outputfolder+"Merged-"+file1+"-"+file2+".txt"
+			  
+			  MergeFSS(file1Path,file2Path,outputPath,res);
+			  
+			  
+		  })
+  
+		  //Get CreateNumb
+		  app.get('/createNumbFile/:amount', function(req, res) {
+			  console.log(req.params);
+			  
+			  
+			  var amount = req.params.amount;
+			  var outputPath = inputfolder+"Numb"+amount+".txt";
+			  
+			  if(isNaN(amount))
+			  {
+				  res.end(amount + " ist keine gültige Zahl");
+				  return;	
+			  }
+			  
+			  genFile(amount,outputPath,res,number_file_gen.gen);
+		  });
+  
+		  //Get CreateAlph
+		  app.get('/createAlphFile/:amount', function(req, res) {
+			  console.log(req.params);
+			  var amount = req.params.amount;
+			  var outputPath = inputfolder+"Alph"+amount+".txt";
+			  
+			  if(isNaN(amount))
+			  {
+				  res.end(amount + " ist keine gültige Zahl");
+				  return;	
+			  }
+			  genFile(amount,outputPath,res,alpha_file_gen.gen);
+			  
+			  
+		  });
+  
+		  //Get Merge
+		  app.get('/MergeFS/:file1/:file2', async function(req, res) {
+			  
+		  
+			  console.log(req.params);
+			  var file1 = req.params.file1;
+			  var file2 = req.params.file2;
+			  var file1Path = inputfolder + file1;
+			  var file2Path = inputfolder + file2;
+			  var outputPath = outputfolder+"Merged-"+file1+"-"+file2+".txt"
+			  
+			  MergeFSS(file1Path,file2Path,outputPath,res);
+		  });
+  
+  
+		  //AsyncFunctions
+  
+		  async function MergeFSS(file1Path,file2Path,outputPath,res)
+		  {
+			  fs.access(file1Path, fs.constants.F_OK | fs.constants.W_OK, (err) => {
+				  if (err) {
+					  res.send(
+					  \` `+ '$' + `{file1Path} `+ '$' + `{err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}\`);
+				  } else {
+					  fs.access(file2Path, fs.constants.F_OK | fs.constants.W_OK, async (err) => {
+						  if (err) {
+						  res.send(
+							  \``+ '$' + `{file2Path} `+ '$' + `{err.code === 'ENOENT' ? 'does not exist' : 'is read-only'}\`);
+						  } else {
+		  
+		  
+			  
+							  await merge_files.merge(file1Path,file2Path,outputPath);
+							  res.download(__dirname +"/"+ outputPath);
+						  }
+					  });
+				  }
+			  });
+			  
+			  
+		  }
+		  async function genFile(amount,outputPath,res,genMethod)
+		  {
+			  await genMethod(amount,outputPath);
+			  
+			  res.download(__dirname +"/"+ outputPath);
+		  }
+  
+  
+  
+		  
+		  </code>
+	  </pre>
+	  </details>
+
+
+
+	</div>
 </body>
 
 

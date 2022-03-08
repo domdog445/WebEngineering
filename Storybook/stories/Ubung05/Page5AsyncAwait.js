@@ -48,8 +48,8 @@ var btxt = "";
 konkatenier();
 
 async function konkatenier() {
-	const Patxt = get("/U5/A.txt")
-	const Pbtxt = get("/U5/B.txt")
+	const Patxt = get("/~dzens2s/Storybook/U5/A.txt")
+	const Pbtxt = get("/~dzens2s/Storybook/U5/B.txt")
 
 	
 	atxt = await Patxt; 

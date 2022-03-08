@@ -3,7 +3,7 @@ import { createPage4RL } from './Page4Rednerliste'
 import { createPage4TC } from './Page4Tabellencalc'
 import { createPage4HTMLE } from './Page4HTMLEditor'
 export default {
-  title: 'Lösungen der Übungen/Übung 04',
+  title: 'Lösungen der Übungen/Übung 04 DOM',
   argTypes: {},
 };
 

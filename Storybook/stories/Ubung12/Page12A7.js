@@ -5,10 +5,10 @@ export const createPage12A7 = ({
 
   const section = `
  
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe wurde auf ein Exploit eines ArrayWrapper hingewiesen, der in der Vorlesung präsentiert wurde.</p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
   
     <details>
     <summary> Open a second tab and use the same url as this page you are currently on (or any url within this instance of WebGoat) \n Then, on that second that open the browser developer tools and open the javascript console. And type: alert(document.cookie);</summary>

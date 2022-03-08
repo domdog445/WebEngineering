@@ -4,7 +4,7 @@ import { createPage12A7 } from './Page12A7'
 
 
 export default {
-  title: 'Lösungen der Übungen/Übung 12',
+  title: 'Lösungen der Übungen/Übung 12 Security',
   argTypes: {},
 };
 

@@ -4,10 +4,10 @@ export const createPage6MergeFiles = ({
   const article = document.createElement('article');
 
   const section = `
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe sollten zwei Node Kommandozeilen-Tools entwickelt werden. Beide Tools, sollen hierbei die vorhin erstellten Dateien Zeilenweise mergen können. Das eine Tool funktioniert mithilfe von FS und das andere mithilfe von Streams </p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code des Merge Files (merge_files.mjs)</summary>
@@ -78,7 +78,7 @@ export const createPage6MergeFiles = ({
 		</code>
 	</pre>
 	</details>
-	<a href="/U7/outputfile.txt">Ergebnisdatei</a>
+	<a href="/~dzens2s/Storybook/U7/outputfile.txt">Ergebnisdatei</a>
 	<br>
 	<br>
 	<details>

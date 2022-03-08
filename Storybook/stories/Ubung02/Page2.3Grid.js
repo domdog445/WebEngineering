@@ -66,8 +66,13 @@ export const createPage2_3Grid = ({
 		height: 30px;
 		padding: 0px 30px 0px 30px;
 		margin: 10px 10px 10px 10px;
-		background-color: #6B709B;
+		background-color: #7B80AB;
 		font-weight: bold;
+		
+	}
+	.headerbutton:hover {
+		
+		background-color: #5B608B;
 		
 	}
 	

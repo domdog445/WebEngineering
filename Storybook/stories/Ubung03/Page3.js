@@ -3,8 +3,8 @@ export const createPage3 = ({
   const article = document.createElement('article');
 
   const section = `
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
    
 	<title> JavaScript</title>
 	<style>
@@ -36,6 +36,10 @@ export const createPage3 = ({
 		display: flex;
 		flex-direction: column;
 		grid-area: "ConsoleContainer";
+		margin: 10px 3px 3px 3px;
+		padding: 5px 5px 5px 5px;
+		background-color: #EEEEEE;
+		border-radius: 30px;
 	}
 	
 	.AufgabenContainer{
@@ -59,8 +63,12 @@ export const createPage3 = ({
 	{
 	visibility:visible;
 	width: 100%;
-	margin: 0px 0px 0px 0px;
 	display: inline-block;
+	margin: 10px 3px 3px 3px;
+	padding: 5px 5px 5px 5px;
+	background-color: #EEEEEE;
+	border-radius: 30px;
+	padding: 5px 5px 5px 5px;
 	}
 
 	.GridContainer
@@ -76,12 +84,20 @@ export const createPage3 = ({
 		background-color: #9999FF;
 		padding: 5px 10px 5px 10px ;
 		border-radius: 10px 10px 10px 10px;
+		border: solid 1px #555;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 3px 3px rgba(0, 0, 0, 0.2);
+	}
+	button:hover{
+		
+		background-color: #7979DF;
+		
 	}
 	.button1{
-		font-size: 20px;
 		background-color: #c49106;
-		padding: 5px 10px 5px 10px ;
-		border-radius: 10px 10px 10px 10px;
+	}
+	.button1:hover{
+		background-color: #a47100;
 	}
 	.button2{
 		font-size: 20px;
@@ -89,8 +105,15 @@ export const createPage3 = ({
 		padding: 5px 10px 5px 10px ;
 		border-radius: 10px 10px 10px 10px;
 	}
+	.button2:hover{
+		background-color: #37d500;
+	}
 	.NavButtons{
 		grid-area: Nav;
+		margin: 0px 0px 15px 0px;
+		padding: 5px 5px 5px 5px;
+		background-color: #EEEEEE;
+		border-radius: 20px;
 	}
 
 	@media only screen and (max-width: 600px) {
@@ -1701,7 +1724,7 @@ var mulc = binaryc(mul);
 </div>
 <div class="ConsoleContainer">
 <div>
-<button onclick="clearConsole()"> clearConsole()</button> <br>
+<center><button onclick="clearConsole()"> clearConsole()</button> </center><br>
 
 <label for="Input1">Input1:</label>
 <input type="number" name="Input1" id="Input1">

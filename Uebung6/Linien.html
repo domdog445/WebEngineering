@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Kalligraphie-Editor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<script>
+	
+	
+	
+	
+	function makeDrawable(evt)
+	{
+		var svg = evt.target;
+		var currentpath;
+		svg.addEventListener('mousedown', startDraw);
+		svg.addEventListener('mousemove', Draw);
+		svg.addEventListener('mouseup', endDraw);
+		svg.addEventListener('mouseleave', endDraw);
+	
+		function startDraw(evt)
+		{
+			
+			currentpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+			svg.appendChild(currentpath);
+			coord = getMousePosition(evt);
+			currentpath.setAttribute("d","M" + coord.x + " " + coord.y);
+			currentpath.setAttribute("stroke-width","5");
+			currentpath.setAttribute("stroke","black");
+			currentpath.setAttribute("fill","transparent");
+		}
+		
+		function Draw(evt)
+		{
+			if(currentpath)
+			{
+				var coord = getMousePosition(evt);
+				currentpath.setAttribute("d", currentpath.getAttribute("d")+ " " + coord.x + " " + coord.y)
+			}
+
+		}	
+		
+		function endDraw(evt)
+		{
+			currentpath = null;
+		}
+		
+		function getMousePosition(evt)
+		{
+			const CTM = document.querySelector('svg').getScreenCTM();
+			return {
+				x:(evt.clientX - CTM.e)/ CTM.a,
+				y:(evt.clientY - CTM.f)/ CTM.d
+			};
+		}
+	}
+	
+	function setLineFromPoints(line,po1,po2)
+	{
+		line.setAttribute("x1",po1.getAttribute("cx"));
+		line.setAttribute("y1",po1.getAttribute("cy"));
+		line.setAttribute("x2",po2.getAttribute("cx"));
+		line.setAttribute("y2",po2.getAttribute("cy"));
+	}
+	
+	
+	function PointToString(p)
+	{
+		return p.getAttribute("cx")+" " + p.getAttribute("cy");
+	}
+</script>
+</head>
+
+<body id="body">
+	
+	<script src="../Headerscript.js" async></script>
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+			</div>
+	</header>
+	<div class="content">
+	<svg xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 1000 600"
+		onload="makeDrawable(evt)">
+		<rect x="0" y="0" width="1000" height="600" fill="#DDDDDD">
+	</svg>
+	
+	</div>
+	
+</body>
+
+
+</html>
+

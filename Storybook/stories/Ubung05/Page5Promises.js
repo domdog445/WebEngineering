@@ -39,15 +39,14 @@ function get(url)
 
 	});
 }
-console.log("File loaded");
 
 var atxt = "";
 var btxt = "";
 
 
 Promise.all([
-	get("/U5/A.txt").then((value)=> atxt = value),
-	get("/U5/B.txt").then((value)=> btxt = value)])
+	get("/~dzens2s/Storybook/U5/A.txt").then((value)=> atxt = value),
+	get("/~dzens2s/Storybook/U5/B.txt").then((value)=> btxt = value)])
 	.then(function()
 	{
 		result = "";

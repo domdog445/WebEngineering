@@ -14,7 +14,7 @@ export const createPage8MenuComp = ({
   }
 
   </style>
-  <script type="module" src="/U8/WebComponentMenuComponent.js"></script>
+  <script type="module" src="/~dzens2s/Storybook/U8/WebComponentMenuComponent.js"></script>
   <div class="HorizontalDiv">
   <simple-menucomponent id="Menu1"></simple-menucomponent>
 	</div>
@@ -24,7 +24,7 @@ export const createPage8MenuComp = ({
 	</div>
   <script> 
     menu1 = document.getElementById("Menu1")
-    console.log(menu1);
+    
     menu1.items = [];
     menu1.items.push(
       {

@@ -8,12 +8,12 @@
 <script src="https://kit.fontawesome.com/80f1744b25.js" crossorigin="anonymous"></script>
 	
 	<style>
-		body,html {
+		body,html, .content {
 			margin: 0;
 			height: 100%;
 		
 		}
-		body{
+		.content{
 			display: grid;
 			grid-template-rows: auto auto 1fr;
 		}
@@ -59,109 +59,130 @@
 </head>
 
 <body>
-
-<h1>Tabellenkalkulation mit contentEditable</h1>
-<div id="toolbar">
-	<span id="Headlines" class="Toolbar">
-		<select name="Headlines" id="HeadlinesSelect" oninput="SelectHeadline()">
-		  <option value="h">Format</option>
-		  <option value="h1">H1</option>
-		  <option value="h2">H2</option>
-		  <option value="h3">H3</option>
-		  <option value="h4">H4</option>
-		  <option value="h5">H5</option>
-		  <option value="h6">H6</option>
-		  <option value="p">p</option>
-		</select>
-		
-	</span>
-	<span id="Special" class="Toolbar">
-		<button onclick="pressButt('undo')"><i class="fas fa-undo"></i> </button>
-		<button onclick="pressButt('redo')"><i class="fas fa-redo"></i> </button>
-		<button onclick="pressButt('delete')"><i class="fas fa-backspace"></i> </button>
-
-
-	</span>
-	<span id="Color" class="Toolbar">
-		
-		<span class="menu-item"  >
-			<button onclick="addForeColor()"><i class="fa fa-font"  style="color:#55BB55" ></i><i class="fas fa-plus" style="color:#55BB55"></i></button>
-			<div id="foreColorContainer" ></div>
-		</span>
-
-		<input id="hexdezColor" placeholder="#FF0000"></input>
-	<span class="menu-item"  >
-			<button onclick="addBackColor()"><i class="fa fa-font"  style="background:#55BB55"></i><i class="fas fa-plus" style="background:#55BB55"></i></button>
-			<div id="backColorContainer" ></div>
-		</span>
 	
-	</span>
-
-	<span id="Linking" class="Toolbar">
-		<button onclick="pressButt('createlink')"><i class="fas fa-link"></i> </button>
-		<button onclick="pressButt('unlink')"><i class="fas fa-unlink"></i> </button>
-		<button onclick="pressButt('insertimage')"><i class="far fa-image"></i> </button>
-		
-	</span>
-
-	<span id="Align" class="Toolbar">
-		<button onclick="pressButt('justifyLeft')"><i class='fa fa-align-left'></i> </button>
-		<button onclick="pressButt('justifyCenter')"><i class='fa fa-align-center'></i> </button>
-		<button onclick="pressButt('justifyRight')"><i class='fa fa-align-right'></i> </button>
-		<button onclick="pressButt('justifyFull')"><i class='fa fa-align-justify'></i> </button>
-	</span>	
-	<span id="Ruck" class="Toolbar">
-		<button onclick="pressButt('indent')"><i class='fa fa-indent'></i> </button>
-		<button onclick="pressButt('outdent')"><i class='fa fa-outdent'></i> </button>
-	</span>
-
-	<span id="Style" class="Toolbar">
-		<button onclick="pressButt('bold')"><i class="fas fa-bold"></i></button>
-		<button onclick="pressButt('italic')"><i class="fas fa-italic"></i> </button>
-		<button onclick="pressButt('underline')"><i class="fas fa-underline"></i> </button>
-		<button onclick="pressButt('strikeThrough')"><i class="fas fa-strikethrough"></i> </button>
-		
-		
-	</span>
-
-	<span id="SubSuper" class="Toolbar">
-		<button onclick="pressButt('subscript')"><i class="fa fa-subscript"></i> </button>
-		<button onclick="pressButt('superscript')"><i class="fa fa-superscript"></i> </button>
-	</span>
-
-	<span id="Size" class="Toolbar">	
-		
-		
-		
-		<select name="SizeSelect" id="SizeSelect" oninput="SelectSize()">
-		  <option value="0">Size</option>
-		  <option value="1">1</option>
-		  <option value="2">2</option>
-		  <option value="3">3</option>
-		  <option value="4">4</option>
-		  <option value="5">5</option>
-		  <option value="6">6</option>
-		  <option value="7">7</option>
-		</select>
-		
-		
-		
-	</span>
-</div>
+<link rel="stylesheet" href="../mystyle.css">
+<header id="Header">
+	<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+	<div class="NavContainer">
+		<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+		<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+		<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+		<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+		<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+		<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+		<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+		<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+		<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+		<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+		<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+		<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+		<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+		<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+</header>
+	<div class="content">
+		<h1>Tabellenkalkulation mit contentEditable</h1>
+		<div id="toolbar">
+			<span id="Headlines" class="Toolbar">
+				<select name="Headlines" id="HeadlinesSelect" oninput="SelectHeadline()">
+				<option value="h">Format</option>
+				<option value="h1">H1</option>
+				<option value="h2">H2</option>
+				<option value="h3">H3</option>
+				<option value="h4">H4</option>
+				<option value="h5">H5</option>
+				<option value="h6">H6</option>
+				<option value="p">p</option>
+				</select>
+				
+			</span>
+			<span id="Special" class="Toolbar">
+				<button onclick="pressButt('undo')"><i class="fas fa-undo"></i> </button>
+				<button onclick="pressButt('redo')"><i class="fas fa-redo"></i> </button>
+				<button onclick="pressButt('delete')"><i class="fas fa-backspace"></i> </button>
 
 
+			</span>
+			<span id="Color" class="Toolbar">
+				
+				<span class="menu-item"  >
+					<button onclick="addForeColor()"><i class="fa fa-font"  style="color:#55BB55" ></i><i class="fas fa-plus" style="color:#55BB55"></i></button>
+					<div id="foreColorContainer" ></div>
+				</span>
 
-<div id="Editor">Es kann losgehen!!!</div>
+				<input id="hexdezColor" placeholder="#FF0000"></input>
+			<span class="menu-item"  >
+					<button onclick="addBackColor()"><i class="fa fa-font"  style="background:#55BB55"></i><i class="fas fa-plus" style="background:#55BB55"></i></button>
+					<div id="backColorContainer" ></div>
+				</span>
+			
+			</span>
+
+			<span id="Linking" class="Toolbar">
+				<button onclick="pressButt('createlink')"><i class="fas fa-link"></i> </button>
+				<button onclick="pressButt('unlink')"><i class="fas fa-unlink"></i> </button>
+				<button onclick="pressButt('insertimage')"><i class="far fa-image"></i> </button>
+				
+			</span>
+
+			<span id="Align" class="Toolbar">
+				<button onclick="pressButt('justifyLeft')"><i class='fa fa-align-left'></i> </button>
+				<button onclick="pressButt('justifyCenter')"><i class='fa fa-align-center'></i> </button>
+				<button onclick="pressButt('justifyRight')"><i class='fa fa-align-right'></i> </button>
+				<button onclick="pressButt('justifyFull')"><i class='fa fa-align-justify'></i> </button>
+			</span>	
+			<span id="Ruck" class="Toolbar">
+				<button onclick="pressButt('indent')"><i class='fa fa-indent'></i> </button>
+				<button onclick="pressButt('outdent')"><i class='fa fa-outdent'></i> </button>
+			</span>
+
+			<span id="Style" class="Toolbar">
+				<button onclick="pressButt('bold')"><i class="fas fa-bold"></i></button>
+				<button onclick="pressButt('italic')"><i class="fas fa-italic"></i> </button>
+				<button onclick="pressButt('underline')"><i class="fas fa-underline"></i> </button>
+				<button onclick="pressButt('strikeThrough')"><i class="fas fa-strikethrough"></i> </button>
+				
+				
+			</span>
+
+			<span id="SubSuper" class="Toolbar">
+				<button onclick="pressButt('subscript')"><i class="fa fa-subscript"></i> </button>
+				<button onclick="pressButt('superscript')"><i class="fa fa-superscript"></i> </button>
+			</span>
+
+			<span id="Size" class="Toolbar">	
+				
+				
+				
+				<select name="SizeSelect" id="SizeSelect" oninput="SelectSize()">
+				<option value="0">Size</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				</select>
+				
+				
+				
+			</span>
+		</div>
+
+
+
+		<div id="Editor">Es kann losgehen!!!</div>
 
 
 
 
 
-	<script src="HTMLEditor.js"></script> 
+		<script src="HTMLEditor.js"></script> 
 
-	
+			
 
-
+	</div>
 </body>
 
 </html>

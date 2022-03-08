@@ -8,7 +8,7 @@ import { createPage8MenuComp } from './Page8MenuComponent'
 import { createPage8WWWNavigator } from './Page8WWWNavigator'
 
 export default {
-  title: 'Lösungen der Übungen/Übung 08',
+  title: 'Lösungen der Übungen/Übung 08 Modular Web',
   argTypes: {},
 };
 

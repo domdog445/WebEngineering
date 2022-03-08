@@ -6,7 +6,7 @@ import { createPage6Linien } from './Page6LinienTool'
 var json = require('./Bundestagverteilung.json'); //with path
 
 export default {
-  title: 'Lösungen der Übungen/Übung 06',
+  title: 'Lösungen der Übungen/Übung 06 SVG',
   argTypes: {},
 };
 

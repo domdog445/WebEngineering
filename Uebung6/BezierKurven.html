@@ -12,54 +12,8 @@
 		cursor: move;
 	}
 	</style>
-</head>
-
-<body id="body">
-	<div>
-	<svg xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 1000 600"
-		onload="makeDraggable(evt)">
-	<rect x=0 y=0 fill="#DDDDDD" width="1000" height="600"/>
-	
-	<path id="curve" d="" stroke="black" fill="transparent"/>
-	<line id="path12" x1="0" y1="0" x2="0" y2="0" stroke="#AAAAAA" />
-	<line id="path23" x1="0" y1="0" x2="100" y2="100" stroke="#AAAAAA" />
-	<line id="path34" x1="0" y1="0" x2="0" y2="0" stroke="#AAAAAA" />
-	
-	<circle id="p1" cx="600" cy="50" r="10" fill="yellow" class="draggable"></circle>
-	<circle id="p2" cx="600" cy="150" r="10" fill="green" class="draggable"></circle>
-	<circle id="p3" cx="135" cy="150" r="10" fill="red" class="draggable"></circle>
-	<circle id="p4" cx="135" cy="50" r="10" fill="blue" class="draggable"></circle>
-	
-	
-	
-	</svg>
-	
-	</div>
-	
-</body>
-
-<script>
-
-	var p1=document.getElementById("p1");
-	var p2=document.getElementById("p2");
-	var p3=document.getElementById("p3");
-	var p4=document.getElementById("p4");
-	
-	var line12=document.getElementById("path12");
-	var line23=document.getElementById("path23");
-	var line34=document.getElementById("path34");
-	
-	var curve=document.getElementById("curve");
-			
-	let animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
-	
-	var selectedElement = false;
-	
-	calcCurv();
-	
-	
-	function makeDraggable(evt)
+	<script>
+		function makeDraggable(evt)
 	{
 		var svg = evt.target;
 		svg.addEventListener('mousedown', startDrag);
@@ -105,6 +59,75 @@
 			};
 		}
 	}
+	</script>
+</head>
+
+<body id="body" style="background-color:var(--background-color)">
+	
+<link rel="stylesheet" href="../mystyle.css">
+<header id="Header">
+	<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+	<div class="NavContainer">
+		<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+		<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+		<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+		<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+		<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+		<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+		<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+		<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+		<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+		<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+		<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+		<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+		<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+		<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+</header>
+	<div class="Content" style="padding: var(--margin-content)">
+		<div>
+		<svg xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1000 600"
+			onload="makeDraggable(evt)">
+		<rect x=0 y=0 fill="#DDDDDD" width="1000" height="600"/>
+		
+		<path id="curve" d="" stroke="black" fill="transparent"/>
+		<line id="path12" x1="0" y1="0" x2="0" y2="0" stroke="#AAAAAA" />
+		<line id="path23" x1="0" y1="0" x2="100" y2="100" stroke="#AAAAAA" />
+		<line id="path34" x1="0" y1="0" x2="0" y2="0" stroke="#AAAAAA" />
+		
+		<circle id="p1" cx="600" cy="50" r="10" fill="yellow" class="draggable"></circle>
+		<circle id="p2" cx="600" cy="150" r="10" fill="green" class="draggable"></circle>
+		<circle id="p3" cx="135" cy="150" r="10" fill="red" class="draggable"></circle>
+		<circle id="p4" cx="135" cy="50" r="10" fill="blue" class="draggable"></circle>
+		
+		
+		
+		</svg>
+		
+		</div>
+	</div>
+</body>
+
+<script>
+
+	var p1=document.getElementById("p1");
+	var p2=document.getElementById("p2");
+	var p3=document.getElementById("p3");
+	var p4=document.getElementById("p4");
+	
+	var line12=document.getElementById("path12");
+	var line23=document.getElementById("path23");
+	var line34=document.getElementById("path34");
+	
+	var curve=document.getElementById("curve");
+			
+	let animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+	
+	var selectedElement = false;
+	
+	calcCurv();
+	
 
 	function calcCurv()
 	{

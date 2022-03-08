@@ -20,10 +20,10 @@ export const createPage11WatGGT = ({
     
     
 </style>
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe wurde eine Funktion für die Berechnung des GGTs von 2 Zahlen implementiert. Diese Implementierung wurde dabei in einer WAT-Datei geschrieben und zu WASM konvertiert. Getestet wurde diese Funktion mithilfe der Zahlen 1 - 100.</p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code ggt.wat</summary>
@@ -93,7 +93,7 @@ function addTD(value,parent_element,type="td")
 
 
 var ggts = [];
-fetch('/U11/ggt.wasm').then(response =>
+fetch('/~dzens2s/Storybook/U11/ggt.wasm').then(response =>
   response.arrayBuffer()
 ).then(bytes =>
   WebAssembly.instantiate(bytes,{})
@@ -110,7 +110,6 @@ fetch('/U11/ggt.wasm').then(response =>
 			})
 	  }
 	}
-	console.log(ggts);
 	table = document.getElementById("GGTs");
 	//Header
     tr = document.createElement("tr");

@@ -154,7 +154,7 @@ export const createPage4HTMLE = ({
 
 
 
-	<script src="/U4/HTMLEditor.js"></script> 
+	<script src="/~dzens2s/Storybook/U4/HTMLEditor.js"></script> 
 
 
 

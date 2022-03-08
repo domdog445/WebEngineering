@@ -169,7 +169,7 @@ function createBackground(svg,sizex,sizey)
 }
 
 
-get("/U6/Bundestagverteilung.json").then(function(json)
+get("/~dzens2s/Storybook/U6/Bundestagverteilung.json").then(function(json)
 {
 	
 	

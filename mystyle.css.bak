@@ -1,0 +1,67 @@
+:root {
+	--headerheight: 110px;
+	--background-color: #D4F0D0;
+  }
+
+.navA {font-size: 28px;
+		margin: 2px;}
+.navABox {width: auto;
+		height: auto;
+		border: 2px solid black;
+		background-color: #DDDDDD;
+		margin: 5px 5px 5px 5px;
+		padding: 5px 10px 5px 10px;
+	}
+.NavContainer {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+header {
+	display: flex;
+	gap: 30px 20px;
+	flex-direction: row;
+	background-color: #3D3847;
+	padding: 5px 5px 5px 5px; 
+	margin: 0px;
+}
+.link {
+	padding: 6px 8px;
+	background-color: #463FD1;
+	color: #FFF;
+	border-radius: 10px;
+	border: solid 1px #333;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 3px 3px rgba(0, 0, 0, 0.2);
+	user-select: none;
+	text-decoration: none;
+	
+}
+
+.link:hover {
+	color: #fff;
+	background-color: #3A83E8;
+	text-decoration: none;
+}
+
+.link:active {
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+	background-color: #888;
+}
+
+.content{
+	margin: 0px;
+}
+html, body{
+	margin: 0px;
+	
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+  
+.sticky + .content {
+	padding-top: var(--headerheight);;
+}

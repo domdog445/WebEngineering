@@ -1,7 +1,7 @@
 import { createPage3 } from './Page3'
 
 export default {
-  title: 'Lösungen der Übungen/Übung 03',
+  title: 'Lösungen der Übungen/Übung 03 JavaScript',
   argTypes: {},
 };
 

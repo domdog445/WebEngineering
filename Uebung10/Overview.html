@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Domenic Overview 10</title>
+	<title> Domenic Overview 9</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../Ressource/Style/prism.css">
+	<link rel="stylesheet" href="../Ressource/Style/SummaryStyle.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 </head>
+<body style="background-color:#D4F0D0">
+	<script src="../Headerscript.js" async></script>
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+			</div>
+	</header>
+	<div class="content" style="margin: 15px"> 
+		
+		<div id="app">
+			<word-counter></word-counter>
+			<word-counter></word-counter>
+		</div>
 
-<body>
-	
-	Diese Seite ist leider derzeit nicht verfügbar. Bitte versuchen sie es zu einem späteren Zeitpunkt erneut.
-	
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="WordCounter.js"></script>
+
+		<script>
+			new Vue({
+			el: '#app'
+			
+			});
+		</script>
+
+
+		
+
+	</div>
 </body>
 
 

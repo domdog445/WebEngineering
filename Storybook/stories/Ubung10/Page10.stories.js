@@ -5,7 +5,7 @@ import {createPage10Code} from './Page10Code'
 
 
 export default {
-  title: 'Lösungen der Übungen/Übung 10',
+  title: 'Lösungen der Übungen/Übung 10 Vue',
   argTypes: {},
 };
 
@@ -17,7 +17,7 @@ const TemplateMenuComp = (args) => createPage10MenuComp(args);
 export const MenuKomponente = TemplateMenuComp.bind({});
 
 const TemplateWWWApp = (args) => createPage10WWWapp(args);
-export const WWWmitVue = TemplateWWWApp.bind({});
+export const WWWMitVue = TemplateWWWApp.bind({});
 
 const TemplateCode = (args) => createPage10Code(args);
 export const Code = TemplateCode.bind({});

@@ -5,10 +5,10 @@ export const createPage12A1 = ({
 
   const section = `
  
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe wurde auf ein Exploit eines ArrayWrapper hingewiesen, der in der Vorlesung präsentiert wurde.</p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
   
     <details>
     <summary> Look at the example table. Try to retrieve the department of the employee Bob Franco. Note that you have been granted full administrator privileges in this assignment and can access all data without authentication.</summary>

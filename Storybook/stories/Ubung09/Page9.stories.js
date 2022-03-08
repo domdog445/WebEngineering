@@ -2,7 +2,7 @@ import { createPage9Overview } from './Page9Overview'
 
 
 export default {
-  title: 'Lösungen der Übungen/Übung 09',
+  title: 'Lösungen der Übungen/Übung 09 PWA',
   argTypes: {},
 };
 

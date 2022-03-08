@@ -4,10 +4,10 @@ export const createPage6createFiles = ({
   const article = document.createElement('article');
 
   const section = `
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe sollten zwei Node Kommandozeilen-Tools entwickelt werden. Die erste Anwendung soll eine Datei erstellen welche mit Zahlen gefühlt ist. Die andere Erstellt eine Datei welche mit Buchstaben gefühlt ist. Die Anzahl der Zeilen können als Parameter übergeben werden </p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code des Buchstaben Genereator (alpha_file_gen.mjs)</summary>
@@ -68,7 +68,7 @@ export const createPage6createFiles = ({
 		</code>
 	</pre>
 	</details>
-	<a href="/U7/Alpha.txt">Beispieldatei mit 10000 Zeilen (Buchstaben)</a>
+	<a href="/~dzens2s/Storybook/U7/Alpha.txt">Beispieldatei mit 10000 Zeilen (Buchstaben)</a>
 	<br>
 	<br>
 	<details>
@@ -112,7 +112,7 @@ export const createPage6createFiles = ({
 	  </pre>
 	  </details>
 	  
-	<a href="/U7/number.txt">Beispieldatei mit 10000 Zeilen (Zahlen)</a>
+	<a href="/~dzens2s/Storybook/U7/number.txt">Beispieldatei mit 10000 Zeilen (Zahlen)</a>
 
 
 

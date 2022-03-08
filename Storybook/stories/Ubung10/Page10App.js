@@ -20,19 +20,19 @@ export const createPage10WWWapp= ({
 	
 
 
-	<script type="module" src="/U10/Vue.js"></script>
-	<script type="module" src="/U10/MenuCompAlone.js"></script>
+	<script type="module" src="/~dzens2s/Storybook/U10/Vue.js"></script>
+	<script type="module" src="/~dzens2s/Storybook/U10/MenuCompAlone.js"></script>
 
 
 	<script>
-	//new Vue(import('/U10/App.vue.js')).$mount('#WWWVue');
+	//new Vue(import('/~dzens2s/Storybook/U10/App.vue.js')).$mount('#WWWVue');
 	</script>
 
 	<script>
 	new Vue({
 	el: '#WWWVue',
 	components: {
-		"www-navigator": () => import('/U10/App.vue.js')
+		"www-navigator": () => import('/~dzens2s/Storybook/U10/App.vue.js')
 	  }
 	});
 	</script>

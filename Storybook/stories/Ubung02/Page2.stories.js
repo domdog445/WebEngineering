@@ -4,7 +4,7 @@ import { createPage2_3Flex } from './Page2.3Flex';
 import { createPage2_3Grid } from './Page2.3Grid';
 import { createPage2_4 } from './Page2.4';
 export default {
-  title: 'Lösungen der Übungen/Übung 02',
+  title: 'Lösungen der Übungen/Übung 02 Responsives Web',
   argTypes: {},
 };
 

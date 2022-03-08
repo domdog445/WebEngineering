@@ -4,10 +4,10 @@ export const createPage6Express = ({
   const article = document.createElement('article');
 
   const section = `
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe sollte ein Express-Server aufgesetzt werden, welcher die Tool der vorherigen beiden Aufgaben zur Verfügung stellt. </p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Source Code des Express Servers (ExpressMerge.js)</summary>

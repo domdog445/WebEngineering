@@ -10,8 +10,8 @@ export const createPage10EingabeFeld= ({
   <word-counter></word-counter>
 	</div>
 
-	<script src="/U10/Vue.js"></script>
-	<script src="/U10/WordCounter.js"></script>
+	<script src="/~dzens2s/Storybook/U10/Vue.js"></script>
+	<script src="/~dzens2s/Storybook/U10/WordCounter.js"></script>
 
 	<script>
 	new Vue({

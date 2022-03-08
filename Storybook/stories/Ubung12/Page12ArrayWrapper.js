@@ -5,10 +5,10 @@ export const createPage12Arraywrapper = ({
 
   const section = `
  
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
   <p>In dieser Aufgabe wurde auf ein Exploit eines ArrayWrapper hingewiesen, der in der Vorlesung präsentiert wurde.</p>
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
   <details>
   <summary> Ursachenanalyse und Sicherheitskonzept </summary>
     Durch das nachträgliche hinzufügen der Push Methode, kann die Aktion welche bei der Function "append" aufgerufen wird, geändert werden. <br> <br>

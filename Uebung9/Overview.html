@@ -5,11 +5,101 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<body style="background-color:#D4F0D0">
+	<script src="../Headerscript.js" async></script>
+	<link rel="stylesheet" href="../mystyle.css">
+	<header id="Header">
+		<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+		<div class="NavContainer">
+			<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+			<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+			<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+			<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+			<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+			<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+			<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+			<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+			<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+			<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+			<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+			<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+			<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+			</div>
+	</header>
+	<div class="content"> 
+		
+		<link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
-<body>
-	
-	Diese Seite ist leider derzeit nicht verfügbar. Bitte versuchen sie es zu einem späteren Zeitpunkt erneut.
-	
+		<details>
+		<summary> Beschreiben Sie hier Ihr Vorgehen, Ihre Libraries und Tools, die Sie einsetzen:</summary>
+		<p>
+		   MIthilfe von Exrpress wird eine html Datei über https und http zur verfügung gestellt.
+		  In dieser HTML Datei wird ein Service Worker geladen, welcher die Dateien Offline verfügbar macht.
+	  
+	  
+		  Libaries:
+		  Express: für den Online-Server
+		  FS:  für das lesen der Credentials
+		  Path: für das Verbinden von Pfaden
+	  
+		  <p>
+		</details>
+	  
+	  
+		<details>
+		<summary> Beschreiben Sie hier Ihre Probleme und Lösungskonzepte:</summary>
+		  <p>Lighthouse in Chrome funktionierte nicht. bzw. funktionierte nur über die Kommandozeile.
+	  
+		  Die Http Anfragen müssen zu HTTPs weitergeleitet werden
+		  => Sichergehen das jede Anfrage zu "https" weiter geleitet wird (return res.redirect('https://' + req.headers.host + req.url);)
+	  
+		  </p>
+		</details>
+	  
+		<details>
+		<summary> Lighthouse-Messergebnisse</summary>
+		<p>
+		  <style type="text/css">
+		  .tg  {border-collapse:collapse;border-spacing:0;}
+		  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		  overflow:hidden;padding:10px 5px;word-break:normal;}
+		  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		  .tg .tg-baqh{text-align:center;vertical-align:top}
+		  .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+		  </style>
+		  <table class="tg">
+		  <thead>
+		  <tr>
+			  <th class="tg-amwm">Performance</th>
+			  <th class="tg-baqh">100</th>
+		  </tr>
+		  </thead>
+		  <tbody>
+		  <tr>
+			  <td class="tg-amwm">Accessibility</td>
+			  <td class="tg-baqh">91</td>
+		  </tr>
+		  <tr>
+			  <td class="tg-amwm">Best Pracices</td>
+			  <td class="tg-baqh">100</td>
+		  </tr>
+		  <tr>
+			  <td class="tg-amwm">SEO</td>
+			  <td class="tg-baqh">82</td>
+		  </tr>
+		  </tbody>
+		  </table>
+		  <a href="PWAErgebnis.html"> Hier geht es zum direkten Ergebniss von Lighthouse</a>
+		</p>
+		
+		</details>
+		<a href="PWADomenicZens.zip"> Download der PWA als Zip</a>
+		<script src="../Ressource/Style/prism.js"></script>
+	<link rel="stylesheet" href="../Ressource/Style/prism.css">
+	<link rel="stylesheet" href="../Ressource/Style/SummaryStyle.css">
+	</div>
 </body>
 
 

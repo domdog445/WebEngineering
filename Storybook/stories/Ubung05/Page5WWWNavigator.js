@@ -157,7 +157,7 @@ export const createPage5WWWNavigator = ({
 		  <a href="">About</a>
 		  </div></div> 
 		  
-		  <script src="/U5/WWWNavigator.js"></script> 
+		  <script src="/~dzens2s/Storybook/U5/WWWNavigator.js"></script> 
   </body>
   
   

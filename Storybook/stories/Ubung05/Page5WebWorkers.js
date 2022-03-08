@@ -54,9 +54,8 @@ export const createPage5WebWorkers = ({
 	width = 1;
 	animation = requestAnimationFrame(step);
 
-	console.log("start");
 	
-	worker = new Worker("/U5/PrimzahlenWebworkerPrime.js");
+	worker = new Worker("/~dzens2s/Storybook/U5/PrimzahlenWebworkerPrime.js");
 	worker.addEventListener('message', function(i)
 	{
 		primzahlenContainer.innerHTML += '<div class="primzahl">'+i.data+' </div>';
@@ -69,7 +68,6 @@ export const createPage5WebWorkers = ({
 	animation = requestAnimationFrame(step);
 	
 	}
-	console.log("end pri Script");
 </script> 
 
 

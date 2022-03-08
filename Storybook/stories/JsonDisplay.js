@@ -29,9 +29,6 @@ export const createJson = ({
       }
       result+="</table>";
 
-
-
-      console.log("Frank:" + json[i]);
     }
 
 

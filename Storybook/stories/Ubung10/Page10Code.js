@@ -4,9 +4,9 @@ export const createPage10Code = ({
   const article = document.createElement('article');
 
   const section = `
-  <script src="/Style/prism.js"></script>
-  <link rel="stylesheet" href="/Style/prism.css">
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <script src="/~dzens2s/Storybook/Style/prism.js"></script>
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
   <p>In diesem Dokument, wird der Source-Code der Aufgaben 10 dargestellt. Hierbei wurde die Menü Komponente und der WWW-Navigator als Single File Component (.vue Datei) geschrieben und automatisch umgewandelt</p>
   
 
@@ -68,7 +68,7 @@ export const createPage10Code = ({
 		
 		  &lt;template&gt;
 		  &lt;div class="hello"&gt;
-			&lt;div var="Kuchen" &gt;
+			&lt;div var="" &gt;
 			&lt;div v-bind:style="{ display: 'flex', 'flex-direction': fdirection, 'justify-content': 'center' }"&gt;
 				&lt;slot&gt;&lt;/slot&gt;
 				&lt;button v-bind:class="[{'': true}, butclass ? butclass : '']" v-for="item in items" :key="item.name" @click="$emit('ClickButton', item)"&gt;{{item}}&lt;/button&gt;

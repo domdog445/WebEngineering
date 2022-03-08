@@ -4,7 +4,7 @@ import { createPage5WebWorkers } from './Page5WebWorkers'
 import { createPage5Primzahlen } from './Page5Primzahlen'
 import { createPage5WWWNavigator} from './Page5WWWNavigator'
 export default {
-  title: 'Lösungen der Übungen/Übung 05',
+  title: 'Lösungen der Übungen/Übung 05 Asynchron',
   argTypes: {},
 };
 

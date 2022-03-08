@@ -13,7 +13,7 @@ export const createPage10MenuComp= ({
 
 
 
-	<script type="module" src="/U10/Vue.js"></script>
+	<script type="module" src="/~dzens2s/Storybook/U10/Vue.js"></script>
 
 
 	<script>
@@ -23,7 +23,7 @@ export const createPage10MenuComp= ({
 		itemss: `+ArrToString(MenuItems)+`
 	},
 	components: {
-		"simple-menu": () => import('/U10/components/MenuComp.vue.js')
+		"simple-menu": () => import('/~dzens2s/Storybook/U10/components/MenuComp.vue.js')
 	  }
 	});
 	</script>

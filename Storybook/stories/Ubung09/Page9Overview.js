@@ -5,7 +5,7 @@ export const createPage9Overview= ({
 
   const section = `
 
-  <link rel="stylesheet" href="/Style/SummaryStyle.css">
+  <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
 
   <details>
   <summary> Beschreiben Sie hier Ihr Vorgehen, Ihre Libraries und Tools, die Sie einsetzen:</summary>
@@ -67,11 +67,11 @@ export const createPage9Overview= ({
 	</tr>
 	</tbody>
 	</table>
-	<a href="/U9/PWAErgebnis.html"> Hier geht es zum direkten Ergebniss von Lighthouse</a>
+	<a href="/~dzens2s/Storybook/U9/PWAErgebnis.html"> Hier geht es zum direkten Ergebniss von Lighthouse</a>
   </p>
   
   </details>
-  <a href="/U9/PWADomenicZens.zip"> Download der PWA als Zip</a>
+  <a href="/~dzens2s/Storybook/U9/PWADomenicZens.zip"> Download der PWA als Zip</a>
   
 
 `;

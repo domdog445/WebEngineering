@@ -32,12 +32,18 @@ export const createPage2_4 = ({
 		height: 50%;
 		align: center;}
 	h1 {text-align: center}
+
 	.Buybutton{font-size: 20px;
 		background-color: #EA934B;
 		color: white;
 		padding: 10px 80px 10px 80px;
 		font-family: Arial, Helvetica, sans-serif;
 		font-weight: bold;}
+
+	.Buybutton:hover{
+		background-color: #CA732B;
+		}
+
 	.HeadButtons{font-size: 17px;
 		background-color: #363636;
 		border: 0px;
@@ -154,7 +160,7 @@ export const createPage2_4 = ({
 	</header>
 
 	<div class="content">
-		<div class="Title"><h1> You dont know JavaScript </h1></div>
+		<div class="Title" style="width: 100%"> <center><h1> You dont know JavaScript</h1></center> </div>
 		
 		
 		<div class="imageBox">

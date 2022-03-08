@@ -5,13 +5,7 @@ export const createPage4RL = ({
   const section = `
   <!DOCTYPE html>
 <html lang="de">
-<head>
-    <link rel="icon" href="../Ressource/favicon.svg" sizes="any" type="image/svg+xml">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Rednerliste</title>
-	
-</head>
+
 
 <body>
 	<h1> Rednerliste </h1><br>
@@ -26,7 +20,7 @@ export const createPage4RL = ({
   
   
 
-	<script src="/U4/Rednerliste.js"></script> 
+	<script src="/~dzens2s/Storybook/U4/Rednerliste.js"></script> 
 </body>
 
 

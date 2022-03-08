@@ -33,13 +33,13 @@
 			display: flex;
 			flex-direction: column;
 		}		
-		img{
+		.img{
 			
 			width:100%;
 			height:auto;
 		}		
 			 
-		body 	{
+		.body 	{
 			display: grid;
 			grid-template-columns: 25% 25% 25% 25%;
 			grid-template-areas:
@@ -48,7 +48,7 @@
 			padding: 0px;
 		}
 		@media (max-width: 50em) {
-			body 	{
+			.body 	{
 			grid-template-columns: 50% 50%;
 			grid-template-areas:
 			'one two'
@@ -64,7 +64,7 @@
 		}
 		
 		@media (max-width: 30em) {
-			body 	{
+			.body 	{
 			grid-template-columns: 100%;
 			grid-template-areas:
 			'one' 
@@ -79,7 +79,7 @@
 				grid-template-columns: 70% 30%;
 			}	
 		}
-		html, body
+		html, .body
 		{
 			margin: 0;
 			padding: 0;
@@ -92,6 +92,28 @@
 
 <body>
 	
+<script src="../Headerscript.js" async></script>
+<link rel="stylesheet" href="../mystyle.css">
+<header id="Header">
+	<a href="../index.html"><img alt="Logo" src="../Ressource/Default_Logo.svg" width=100px height= 100px /></a> 
+	<div class="NavContainer">
+		<a href="../Uebung1/Overview.html" class="link navA">1. Einführung</a> 
+		<a href="../Uebung2/Overview.html" class="link navA">2. Responsives Web</a>
+		<a href="../Uebung3/Overview.html" class="link navA">3. JavaScript</a>
+		<a href="../Uebung4/Overview.html" class="link navA">4. DOM</a>
+		<a href="../Uebung5/Overview.html" class="link navA">5. Asynchron</a>
+		<a href="../Uebung6/Overview.html" class="link navA">6. SVG</a>
+		<a href="../Uebung7/Overview.html" class="link navA">7. Node & npm & Deno</a>
+		<a href="../Uebung8/Overview.html" class="link navA">8. Modular Web</a>
+		<a href="../Uebung9/Overview.html" class="link navA">9. PWA</a>
+		<a href="../Uebung10/Overview.html" class="link navA">10. VUE</a>
+		<a href="../Uebung11/Overview.html" class="link navA">11. WebAssembly</a>
+		<a href="../Uebung12/Overview.html" class="link navA">12. Security</a>
+		<a href= "http://www2.inf.h-brs.de/~dzens2s/Storybook" class="link navA">Hier geht es zum Storybook</a>
+		<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
+		</div>
+</header>
+	<div class="body content">
 		<!-- Nummer 1 -->
 		<div id="one" class="boxx"> 
 		<div>
@@ -101,7 +123,7 @@
 				-Mit HTML und CSS Flexbox<br>
 				Die Lösung zu dieser Aufgabe finden sie <a href="2.1.html">hier</a></p>
 			</div>
-			<img src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail1.png"/> 
+			<img class="img" src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail1.png"/> 
 
 		</div>
 		
@@ -117,7 +139,7 @@
 				-Mit HTML und CSS Grid <br>
 				Die Lösung zu dieser Aufgabe finden sie <a href="2.2.html">hier</a></p>
 			</div>
-			<img src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail1.png"/> 
+			<img class="img" src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail1.png"/> 
 		</div>
 		<!-- Nummer 3 -->
 		<div id="three" class="boxx"> 
@@ -129,7 +151,7 @@
 					Die Lösung mit Grid finden sie  <a href="2.3Grid.html">hier</a>
 				</p>
 			</div>
-			<img src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail2.png"/> 
+			<img class="img" src="https://kaul.inf.h-brs.de/wem/assets/img/holy-grail2.png"/> 
 
 		</div>
 		<!-- Nummer 4 -->
@@ -142,10 +164,10 @@
 					Die Lösung zu dieser Aufgabe finden sie <a href="2.4.html">hier</a>
 				</p>
 			</div>
-			<img src="https://kaul.inf.h-brs.de/wem/assets/img/landing.png"/> 
+			<img class="img" src="https://kaul.inf.h-brs.de/wem/assets/img/landing.png"/> 
 
 		</div>
-	
+	</div>
 </body>
 
 
