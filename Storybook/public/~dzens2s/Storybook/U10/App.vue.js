@@ -32,7 +32,7 @@ export default {
 		</div>
 	</div>
 	<!--Footer-->
-	<div id="footer" class="boxx"> 
+	<div id="footer" class="boxx" style="flex: 100%;background-color: #000000; border-radius: 0px 0px 20px 20px ; margin: 0px 0px 0px 0px;"> 
 		<div class="contentText">Footer: 
 			<a href="">Sitemap</a>
 			<a href="">Home</a>

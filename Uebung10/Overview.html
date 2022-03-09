@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Domenic Overview 9</title>
+	<title> Domenic Overview 10</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../Ressource/Style/prism.css">
@@ -30,20 +30,41 @@
 			<a onclick="history.back()" class="link navA back" style="margin-left: auto;">Zurück</a>
 			</div>
 	</header>
-	<div class="content" style="margin: 15px"> 
-		
-		<div id="app">
+	<div class="content" style="margin: 15px" id="app"> 
+		<div class="inner_content" >
 			<word-counter></word-counter>
 			<word-counter></word-counter>
+			<h1>console.log(item)</h1>
+			<h1>alert(item)</h1>
+			<simple-menu v-bind:items="items1" fdirection="row" v-on:clickbutton="Console"></simple-menu>
+			<simple-menu v-bind:items="items2" fdirection="column" v-on:clickbutton="Alert"></simple-menu>
 		</div>
-
+		<www-navigator></www-navigator>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="WordCounter.js"></script>
-
 		<script>
 			new Vue({
-			el: '#app'
-			
+				el: '#app',
+				components: {
+					"simple-menu": () => import('./components/MenuComp.vue.js'),
+					"www-navigator": () => import('./App.vue.js')
+				},
+				data:{
+					items1: ["1","2","3","4"],
+					items2: ["5","6","7","8"]
+				},
+				methods:
+				{
+					Console(Val){
+						console.log(Val);
+					},
+					Alert(Val)
+					{
+						alert(Val);
+					}
+					
+
+				},
 			});
 		</script>
 
@@ -51,6 +72,12 @@
 		
 
 	</div>
+	<style>
+		.inner_content{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	</style>
 </body>
 
 

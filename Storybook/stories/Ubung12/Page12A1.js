@@ -7,7 +7,7 @@ export const createPage12A1 = ({
  
   <script src="/~dzens2s/Storybook/Style/prism.js"></script>
   <link rel="stylesheet" href="/~dzens2s/Storybook/Style/prism.css">
-  <p>In dieser Aufgabe wurde auf ein Exploit eines ArrayWrapper hingewiesen, der in der Vorlesung präsentiert wurde.</p>
+  <h1>Webgoat A1</h1>
   <link rel="stylesheet" href="/~dzens2s/Storybook/Style/SummaryStyle.css">
   
     <details>

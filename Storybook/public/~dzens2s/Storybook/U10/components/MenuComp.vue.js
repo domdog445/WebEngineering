@@ -11,7 +11,7 @@ export default {
 			margin: 10px 10px 10px 10px;
 			background-color: #6B709B;
       color: #EEEEEE;
-			font-weight: bold;' v-bind:class="[{'': true}, butclass ? butclass : '']" v-for="item in items" :key="item.name" @click="$emit('ClickButton', item)">{{item}}</button>
+			font-weight: bold;' v-bind:class="[{'': true}, butclass ? butclass : '']" v-for="item in items" :key="item.name" @click="$emit('clickbutton', item)">{{item}}</button>
   </div>
 
 

@@ -4,10 +4,11 @@ import MenuDisplay from './components/MenuDisplay.vue'
 import MenuDisplayLinks from './components/MenuDisplayLinks.vue'
 
 export default {
-	template: `<div>
+	template: `
+  <div>
   
   <div id="header" class="boxx" style="flex: 100%;background-color: #B35653; border-radius: 20px 20px 0px 0px; margin: 0px 0px 0px 0px;"> 
-    <menucomp butclass='headerlink' fdirection="row" ref="Menu" v-on:ClickButton="ClickedOnMenuTop" v-bind:items="itemsHeader">
+    <menucomp butclass='headerlink' fdirection="row" ref="Menu" v-on:clickbutton="ClickedOnMenuTop" v-bind:items="itemsHeader">
     </menucomp>
     </div>
     <div id="mainScroll" style='overflow-y: scroll; height: 80%;  grid-template-areas: "menu content right"; display: grid; grid-template-columns: 20% 60% 20%;'>
@@ -17,7 +18,7 @@ export default {
         <div class="contentText" style='color: white;
         font-size: 30px;
         text-align: center;'>
-          <menucomp butclass='navLinks' fdirection='column' v-on:ClickButton="ClickedOnMenuLeft" v-bind:items="itemsLeft"></menucomp>
+          <menucomp butclass='navLinks' fdirection='column' v-on:clickbutton="ClickedOnMenuLeft" v-bind:items="itemsLeft"></menucomp>
         </div>
       </div>
         
@@ -75,7 +76,7 @@ export default {
   created()
   {
     console.log("created")
-    fetch("U10/NavigatorContents.json").then(response => response.json())
+    fetch("NavigatorContents.json").then(response => response.json())
 		.then(data => {
       jsonOBJ = data;
       console.log(data);
