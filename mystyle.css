@@ -67,3 +67,18 @@ html, body{
 .sticky + .content {
 	padding-top: var(--headerheight);
 }
+@media (max-width: 800px) {
+	.navA {font-size: 16px;
+		margin: 2px;}
+}
+
+
+@media (max-width: 600px) {
+	.navA {font-size: 10px;
+		margin: 2px;}
+}
+
+	@media (min-width: 800px) {
+	
+	}
+}

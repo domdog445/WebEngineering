@@ -25,7 +25,7 @@ export const createPage4TC = ({
 	</style>
 
 <body>
-	<h1>Tabellenkalkulation mit contentEditable</h1>
+	<h1>HTML-Editor</h1>
   
 <div class="grid-container" id="grid-container">
 </div> 

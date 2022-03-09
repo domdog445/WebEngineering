@@ -57,7 +57,7 @@ export const createPage4HTMLE = ({
 	</style>
 
 
-<h1>Tabellenkalkulation mit contentEditable</h1>
+<h1>HTML-Editor (WYSIWYG) </h1>
 <div id="toolbar">
 	<span id="Headlines" class="Toolbar">
 		<select name="Headlines" id="HeadlinesSelect" oninput="SelectHeadline()">

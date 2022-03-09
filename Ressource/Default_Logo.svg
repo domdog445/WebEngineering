@@ -1,123 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="25mm"
-   height="25mm"
-   viewBox="0 0 25 25"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="Default_Logo.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="-42.25"
-     inkscape:cy="91.75"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     width="25mm" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#0000ff;stroke:#000000;stroke-width:0"
-       id="rect958"
-       width="24.999998"
-       height="24.999998"
-       x="3.0019539e-06"
-       y="3.0019539e-06" >
+<svg width="25mm" height="25mm" viewBox="0 0 25 25" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="Default_Logo.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview7" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1" inkscape:pageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:document-units="mm" showgrid="false" inkscape:zoom="2" inkscape:cx="-42.25" inkscape:cy="91.75" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="layer1" width="25mm"/>
+  <defs id="defs2"/>
+  <g inkscape:label="Ebene 1" inkscape:groupmode="layer" id="layer1">
+    <rect id="rect958" width="24.999998" height="24.999998" x="3.0019539e-06" y="3.0019539e-06" style="fill:#463FD1;stroke:#000000;stroke-width:0">
 	   
 	   </rect>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.32889px;line-height:0.85;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.208223"
-       x="0.34636536"
-       y="23.600031"
-       id="text2516"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;stroke-width:0.208223"
-         x="0.34636536"
-         y="23.600031"
-         id="tspan2518">LOGO</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.3968px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.13492"
-       x="0.31718159"
-       y="5.1899462"
-       id="text45384"><tspan
-         sodipodi:role="line"
-         id="tspan45382"
-         style="fill:#ffffff;stroke-width:0.13492"
-         x="0.31718159"
-         y="5.1899462">DEFAULT</tspan></text>
-    <rect
-       style="fill:#000080;stroke:#000000;stroke-width:0"
-       id="rect56525"
-       width="4.9497538"
-       height="4.9497538"
-       x="9.5385942"
-       y="1.7885177"
-       transform="rotate(44.901044)" > 
+    <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.32889px;line-height:0.85;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.208223" x="0.34636536" y="23.600031" id="text2516"><tspan sodipodi:role="line" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#ffffff;stroke-width:0.208223" y="23.600031" id="tspan2518" x="2.34636536">WEM</tspan></text>
+    <text xml:space="preserve" x="0.31718159" y="5.1899462" id="text45384" style="font-style:normal;font-weight:normal;font-size:5.1px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.13492"><tspan sodipodi:role="line" id="tspan45382" style="fill:#ffffff;stroke-width:0.13492" x="0.31718159" y="5.1899462">DOMENIC</tspan></text>
+    <rect id="rect56525" width="4.9497538" height="4.9497538" x="9.5385942" y="1.7885177" transform="rotate(44.901044)" style="fill:#312C91;stroke:#000000;stroke-width:0"> 
 	   </rect>
-    <rect
-       style="fill:#000080;stroke:#000000;stroke-width:0"
-       id="rect56525-0"
-       width="4.9497538"
-       height="4.9497538"
-       x="14.496882"
-       y="-3.1526735"
-       transform="rotate(44.901045)" />
-    <rect
-       style="fill:#ffff00;stroke:#000000;stroke-width:0"
-       id="rect56525-0-4"
-       width="2.8284302"
-       height="2.8284304"
-       x="15.557543"
-       y="-2.0920179"
-       transform="rotate(44.901068)" />
-    <rect
-       style="fill:#ffff00;stroke:#000000;stroke-width:0"
-       id="rect56525-0-4-6"
-       width="2.8284302"
-       height="2.8284304"
-       x="10.599257"
-       y="2.8491755"
-       transform="rotate(44.901068)" />
-    <rect
-       style="fill:#000080;stroke:#000000;stroke-width:0"
-       id="rect56525-8"
-       width="4.9497542"
-       height="4.9497538"
-       x="19.45517"
-       y="-8.0938625"
-       transform="rotate(44.901041)" />
-    <rect
-       style="fill:#ffff00;stroke:#000000;stroke-width:0"
-       id="rect56525-0-4-0"
-       width="2.8284302"
-       height="2.8284304"
-       x="20.515829"
-       y="-7.0332117"
-       transform="rotate(44.901069)" />
+    <rect id="rect56525-0" width="4.9497538" height="4.9497538" x="14.496882" y="-3.1526735" transform="rotate(44.901045)" style="fill:#312C91;stroke:#000000;stroke-width:0"/>
+    <rect id="rect56525-0-4" width="2.8284302" height="2.8284304" x="15.557543" y="-2.0920179" transform="rotate(44.901068)" style="fill:#D4F0D0;stroke:#000000;stroke-width:0"/>
+    <rect id="rect56525-0-4-6" width="2.8284302" height="2.8284304" x="10.599257" y="2.8491755" transform="rotate(44.901068)" style="fill:#D4F0D0;stroke:#000000;stroke-width:0"/>
+    <rect id="rect56525-8" width="4.9497542" height="4.9497538" x="19.45517" y="-8.0938625" transform="rotate(44.901041)" style="fill:#312C91;stroke:#000000;stroke-width:0"/>
+    <rect id="rect56525-0-4-0" width="2.8284302" height="2.8284304" x="20.515829" y="-7.0332117" transform="rotate(44.901069)" style="fill:#D4F0D0;stroke:#000000;stroke-width:0"/>
   </g>
 </svg>

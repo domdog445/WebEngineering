@@ -1,59 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="25mm"
-   height="25mm"
-   viewBox="0 0 25 25"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="favicon.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="-42.25"
-     inkscape:cy="91.75"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     width="25mm" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#000080;stroke:#000000;stroke-width:0"
-       id="rect56525-0"
-       width="15.800911"
-       height="15.800911"
-       x="9.0713043"
-       y="-8.5782518"
-       transform="rotate(44.901045)" />
-    <rect
-       style="fill:#ffff00;stroke:#000000;stroke-width:0"
-       id="rect56525-0-4"
-       width="9.0290899"
-       height="9.0290909"
-       x="12.457211"
-       y="-5.1923466"
-       transform="rotate(44.901068)" />
+<svg width="25mm" height="25mm" viewBox="0 0 25 25" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="favicon.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview7" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1" inkscape:pageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:document-units="mm" showgrid="false" inkscape:zoom="2" inkscape:cx="-42.25" inkscape:cy="91.75" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="layer1" width="25mm"/>
+  <defs id="defs2"/>
+  <g inkscape:label="Ebene 1" inkscape:groupmode="layer" id="layer1">
+    <rect id="rect56525-0" width="15.800911" height="15.800911" x="9.0713043" y="-8.5782518" transform="rotate(44.901045)" style="fill:#312C91;stroke:#000000;stroke-width:0"/>
+    <rect id="rect56525-0-4" width="9.0290899" height="9.0290909" x="12.457211" y="-5.1923466" transform="rotate(44.901068)" style="fill:#D4F0D0;stroke:#000000;stroke-width:0"/>
   </g>
 </svg>
